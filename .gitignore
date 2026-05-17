@@ -67,3 +67,14 @@ fastlane/test_output
 
 # Git worktrees
 .worktrees/
+
+# b1CodingTool Generated
+CLAUDE.md
+.claude/
+GEMINI.md
+.gemini/
+
+# Agent related
+.agent/
+agent.md
+.gitignore
