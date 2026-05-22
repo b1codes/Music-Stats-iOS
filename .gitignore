@@ -77,4 +77,4 @@ GEMINI.md
 # Agent related
 .agent/
 agent.md
-.gitignore
+/.gitignore
