@@ -84,36 +84,22 @@ class AuthManager: ObservableObject {
             return
         }
 
-        let urlRequest = createTokenURLRequest()
-        var bodyComponents = URLComponents()
-        bodyComponents.queryItems = [
-            URLQueryItem(name: "grant_type", value: "refresh_token"),
-            URLQueryItem(name: "refresh_token", value: refreshToken)
-        ]
-        var request = urlRequest
-        request.httpBody = bodyComponents.query?.data(using: .utf8)
+        guard let url = backendURL(path: "/refresh") else {
+            isAuthenticated = false
+            isLoading = false
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONEncoder().encode(["refresh_token": refreshToken])
         await performTokenRequest(request)
     }
 
-    private func createTokenURLRequest() -> URLRequest {
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "accounts.spotify.com"
-        components.path = "/api/token"
-
-        var urlRequest = URLRequest(url: components.url!)
-        urlRequest.httpMethod = "POST"
-
-        let spotifyClientID = Bundle.main.object(forInfoDictionaryKey: "SPOTIFY_API_CLIENT_ID") as? String
-        let spotifyClientSecret = Bundle.main.object(forInfoDictionaryKey: "SPOTIFY_API_CLIENT_SECRET") as? String
-        let combo = "\(spotifyClientID ?? ""):\(spotifyClientSecret ?? "")"
-        let comboEncoded = combo.data(using: .utf8)?.base64EncodedString()
-
-        urlRequest.allHTTPHeaderFields = [
-            "Authorization": "Basic \(comboEncoded!)",
-            "Content-Type": "application/x-www-form-urlencoded"
-        ]
-        return urlRequest
+    private func backendURL(path: String) -> URL? {
+        let base = Bundle.main.object(forInfoDictionaryKey: "BACKEND_API_URL") as? String ?? ""
+        return URL(string: "\(base)\(path)")
     }
 
     private func performTokenRequest(_ request: URLRequest) async {
@@ -142,20 +128,23 @@ class AuthManager: ObservableObject {
     }
 
     private func exchangeCodeForTokens(code: String) async {
-        let urlRequest = createTokenURLRequest()
-
         let redirectURIHost = Bundle.main.object(forInfoDictionaryKey: "REDIRECT_URI_HOST") as? String
         let redirectURIScheme = Bundle.main.object(forInfoDictionaryKey: "REDIRECT_URI_SCHEME") as? String
         let redirectURI = "\(redirectURIScheme ?? "")://\(redirectURIHost ?? "")"
 
-        var bodyComponents = URLComponents()
-        bodyComponents.queryItems = [
-            URLQueryItem(name: "grant_type", value: "authorization_code"),
-            URLQueryItem(name: "code", value: code),
-            URLQueryItem(name: "redirect_uri", value: redirectURI)
-        ]
-        var request = urlRequest
-        request.httpBody = bodyComponents.query?.data(using: .utf8)
+        guard let url = backendURL(path: "/token") else {
+            isAuthenticated = false
+            isLoading = false
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONEncoder().encode([
+            "code": code,
+            "redirect_uri": redirectURI,
+        ])
         await performTokenRequest(request)
     }
 }
