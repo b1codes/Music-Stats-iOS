@@ -6,9 +6,9 @@
 	<string>$(REDIRECT_URI_HOST)</string>
 	<key>REDIRECT_URI_SCHEME</key>
 	<string>$(REDIRECT_URI_SCHEME)</string>
-	<key>SPOTIFY_API_CLIENT_SECRET</key>
-	<string>$(SPOTIFY_API_CLIENT_SECRET)</string>
 	<key>SPOTIFY_API_CLIENT_ID</key>
 	<string>$(SPOTIFY_API_CLIENT_ID)</string>
+	<key>BACKEND_API_URL</key>
+	<string>$(BACKEND_API_URL)</string>
 </dict>
 </plist>
