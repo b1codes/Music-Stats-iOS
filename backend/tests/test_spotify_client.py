@@ -82,11 +82,12 @@ def test_refresh_access_token_posts_to_spotify(monkeypatch):
 def test_credentials_are_cached_across_calls(monkeypatch):
     monkeypatch.setenv("SPOTIFY_SECRET_ARN", "arn:aws:secretsmanager:us-east-1:123:secret:test")
     mock_sm = _mock_sm()
-    with patch("boto3.client", return_value=mock_sm), \
+    with patch("boto3.client", return_value=mock_sm) as mock_boto3, \
          patch("requests.post", return_value=_mock_spotify_response({
              "access_token": "t", "token_type": "Bearer", "expires_in": 3600,
          })):
         sc.exchange_code("code1", "uri")
         sc.exchange_code("code2", "uri")
 
+    assert mock_boto3.call_count == 1
     assert mock_sm.get_secret_value.call_count == 1

@@ -23,9 +23,13 @@ def _auth_header() -> str:
     return "Basic " + b64encode(combo.encode()).decode()
 
 
+_SPOTIFY_TOKEN_URL = "https://accounts.spotify.com/api/token"
+_REQUEST_TIMEOUT = 8  # slightly under the 10s Lambda timeout so we return 502 before API GW 504s
+
+
 def exchange_code(code: str, redirect_uri: str) -> dict:
     response = requests.post(
-        "https://accounts.spotify.com/api/token",
+        _SPOTIFY_TOKEN_URL,
         headers={
             "Authorization": _auth_header(),
             "Content-Type": "application/x-www-form-urlencoded",
@@ -35,6 +39,7 @@ def exchange_code(code: str, redirect_uri: str) -> dict:
             "code": code,
             "redirect_uri": redirect_uri,
         },
+        timeout=_REQUEST_TIMEOUT,
     )
     response.raise_for_status()
     return response.json()
@@ -42,7 +47,7 @@ def exchange_code(code: str, redirect_uri: str) -> dict:
 
 def refresh_access_token(refresh_token: str) -> dict:
     response = requests.post(
-        "https://accounts.spotify.com/api/token",
+        _SPOTIFY_TOKEN_URL,
         headers={
             "Authorization": _auth_header(),
             "Content-Type": "application/x-www-form-urlencoded",
@@ -51,6 +56,7 @@ def refresh_access_token(refresh_token: str) -> dict:
             "grant_type": "refresh_token",
             "refresh_token": refresh_token,
         },
+        timeout=_REQUEST_TIMEOUT,
     )
     response.raise_for_status()
     return response.json()
