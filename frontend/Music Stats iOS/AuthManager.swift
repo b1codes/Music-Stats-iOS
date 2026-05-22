@@ -98,7 +98,8 @@ class AuthManager: ObservableObject {
     }
 
     private func backendURL(path: String) -> URL? {
-        let base = Bundle.main.object(forInfoDictionaryKey: "BACKEND_API_URL") as? String ?? ""
+        guard let base = Bundle.main.object(forInfoDictionaryKey: "BACKEND_API_URL") as? String,
+              !base.isEmpty else { return nil }
         return URL(string: "\(base)\(path)")
     }
 
