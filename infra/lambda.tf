@@ -12,7 +12,8 @@ resource "terraform_data" "package_lambda" {
   }
 
   provisioner "local-exec" {
-    command = <<-EOT
+    interpreter = ["bash", "-c"]
+    command     = <<-EOT
       set -euo pipefail
       rm -rf ${path.module}/../backend/package
       pip install -r ${path.module}/../backend/requirements.txt \
