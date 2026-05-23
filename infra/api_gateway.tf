@@ -1,6 +1,12 @@
+resource "aws_cloudwatch_log_group" "api_access_logs" {
+  name              = "/aws/apigateway/${var.project_name}-api"
+  retention_in_days = 30
+}
+
 resource "aws_apigatewayv2_api" "http_api" {
   name          = "${var.project_name}-api"
   protocol_type = "HTTP"
+  description   = "Spotify OAuth proxy for Music Stats iOS"
 }
 
 resource "aws_apigatewayv2_integration" "lambda" {
@@ -26,6 +32,25 @@ resource "aws_apigatewayv2_stage" "default" {
   api_id      = aws_apigatewayv2_api.http_api.id
   name        = "$default"
   auto_deploy = true
+
+  access_log_settings {
+    destination_arn = aws_cloudwatch_log_group.api_access_logs.arn
+    format = jsonencode({
+      requestId      = "$context.requestId"
+      sourceIp       = "$context.identity.sourceIp"
+      routeKey       = "$context.routeKey"
+      status         = "$context.status"
+      responseLength = "$context.responseLength"
+      durationMs     = "$context.responseLatency"
+      userAgent      = "$context.identity.userAgent"
+      error          = "$context.error.message"
+    })
+  }
+
+  default_route_settings {
+    throttling_burst_limit = 10
+    throttling_rate_limit  = 5
+  }
 }
 
 resource "aws_lambda_permission" "api_gateway_invoke" {
