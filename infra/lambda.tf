@@ -5,21 +5,24 @@ locals {
   ]))
 }
 
-resource "null_resource" "package_lambda" {
-  triggers = {
+resource "terraform_data" "package_lambda" {
+  triggers_replace = {
     requirements = filemd5("${path.module}/../backend/requirements.txt")
     app_source   = local.app_source_hash
   }
 
   provisioner "local-exec" {
     command = <<-EOT
+      set -euo pipefail
       rm -rf ${path.module}/../backend/package
       pip install -r ${path.module}/../backend/requirements.txt \
         -t ${path.module}/../backend/package \
         --quiet \
         --platform manylinux2014_x86_64 \
+        --python-version 3.12 \
+        --implementation cp \
         --only-binary=:all:
-      cp -r ${path.module}/../backend/app/. ${path.module}/../backend/package/
+      cp -r ${path.module}/../backend/app ${path.module}/../backend/package/app
     EOT
   }
 }
@@ -27,14 +30,14 @@ resource "null_resource" "package_lambda" {
 data "archive_file" "lambda_zip" {
   type        = "zip"
   source_dir  = "${path.module}/../backend/package"
-  output_path = "${path.module}/lambda.zip"
-  depends_on  = [null_resource.package_lambda]
+  output_path = "${path.module}/../backend/lambda.zip"
+  depends_on  = [terraform_data.package_lambda]
 }
 
 resource "aws_lambda_function" "api" {
   function_name    = "${var.project_name}-api"
   role             = aws_iam_role.lambda_exec.arn
-  handler          = "main.handler"
+  handler          = "app.main.handler"
   runtime          = "python3.12"
   filename         = data.archive_file.lambda_zip.output_path
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
