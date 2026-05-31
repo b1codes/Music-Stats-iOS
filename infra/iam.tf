@@ -30,3 +30,20 @@ resource "aws_iam_role_policy" "read_spotify_secret" {
   role   = aws_iam_role.lambda_exec.id
   policy = data.aws_iam_policy_document.read_spotify_secret.json
 }
+
+data "aws_iam_policy_document" "users_table" {
+  statement {
+    actions = [
+      "dynamodb:GetItem",
+      "dynamodb:PutItem",
+      "dynamodb:UpdateItem",
+    ]
+    resources = [aws_dynamodb_table.users.arn]
+  }
+}
+
+resource "aws_iam_role_policy" "users_table" {
+  name   = "users-table"
+  role   = aws_iam_role.lambda_exec.id
+  policy = data.aws_iam_policy_document.users_table.json
+}

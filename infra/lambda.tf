@@ -54,6 +54,9 @@ resource "aws_lambda_function" "api" {
   environment {
     variables = {
       SPOTIFY_SECRET_ARN = aws_secretsmanager_secret.spotify_credentials.arn
+      AUTH0_DOMAIN       = var.auth0_domain
+      AUTH0_AUDIENCE     = var.auth0_audience
+      USERS_TABLE_NAME   = aws_dynamodb_table.users.name
     }
   }
 

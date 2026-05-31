@@ -18,12 +18,14 @@ struct MusicStatsiOSApp: App {
         WindowGroup {
             ZStack {
                 if authManager.isLoading {
-                    ProgressView("Logging in...")
-                } else if authManager.isAuthenticated {
+                    ProgressView("Signing in...")
+                } else if !authManager.isAuth0Authenticated {
+                    AuthorizationView()
+                } else if !authManager.isAuthenticated {
+                    SpotifyConnectionView()
+                } else {
                     TabUIView()
                         .environment(\.cardBlur, CGFloat(blurIntensity))
-                } else {
-                    AuthorizationView()
                 }
             }
             .environmentObject(authManager)

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7101594F2E7F0F7D0038295C /* GlassIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 7101594E2E7F0F7D0038295C /* GlassIcon.icon */; };
 		71C478812E3D818300BBCF6E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 71C478802E3D818300BBCF6E /* KeychainSwift */; };
+		A1B2C3D42E000000AABBCC03 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42E000000AABBCC02 /* Auth0 */; };
+		A1B2C3D42E000000AABBCC05 /* SpotifyConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D42E000000AABBCC04 /* SpotifyConnectionView.swift */; };
 		71C478832E3D861C00BBCF6E /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C478822E3D861C00BBCF6E /* AuthManager.swift */; };
 		71C6CF232F9D416400BCC6F8 /* BlurIntensity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6CF222F9D416300BCC6F8 /* BlurIntensity.swift */; };
 		71C6CF252F9D416400BCC6F8 /* EnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6CF242F9D416400BCC6F8 /* EnvironmentKeys.swift */; };
@@ -63,6 +65,7 @@
 		0B3DBF01831258479E5887FA /* StateContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateContainerView.swift; sourceTree = "<group>"; };
 		7101594E2E7F0F7D0038295C /* GlassIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = GlassIcon.icon; sourceTree = "<group>"; };
 		71C478822E3D861C00BBCF6E /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		A1B2C3D42E000000AABBCC04 /* SpotifyConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyConnectionView.swift; sourceTree = "<group>"; };
 		71C6CF222F9D416300BCC6F8 /* BlurIntensity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurIntensity.swift; sourceTree = "<group>"; };
 		71C6CF242F9D416400BCC6F8 /* EnvironmentKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentKeys.swift; sourceTree = "<group>"; };
 		71C6CF262F9D416700BCC6F8 /* BlurIntensityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurIntensityTests.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C478812E3D818300BBCF6E /* KeychainSwift in Frameworks */,
+				A1B2C3D42E000000AABBCC03 /* Auth0 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +218,7 @@
 			children = (
 				7101594E2E7F0F7D0038295C /* GlassIcon.icon */,
 				71C478822E3D861C00BBCF6E /* AuthManager.swift */,
+				A1B2C3D42E000000AABBCC04 /* SpotifyConnectionView.swift */,
 				CA265FFB2C497D7400C1B3DB /* Types */,
 				CA3A7A5A2C4729430064F3DC /* Music-Stats-iOS-Info.plist */,
 				CA6BBC6F2AE8552B00CB99EC /* Tabs */,
@@ -356,6 +361,7 @@
 			mainGroup = CAEBBA202AE74B2B00ABE21B;
 			packageReferences = (
 				71C4787F2E3D818300BBCF6E /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				A1B2C3D42E000000AABBCC01 /* XCRemoteSwiftPackageReference "Auth0.swift" */,
 			);
 			productRefGroup = CAEBBA2A2AE74B2B00ABE21B /* Products */;
 			projectDirPath = "";
@@ -418,6 +424,7 @@
 				71C6CF2A2F9D41B200BCC6F8 /* SettingsView.swift in Sources */,
 				71C478832E3D861C00BBCF6E /* AuthManager.swift in Sources */,
 				CAEBD6592AF428420086B01D /* AuthorizationView.swift in Sources */,
+				A1B2C3D42E000000AABBCC05 /* SpotifyConnectionView.swift in Sources */,
 				71C6CF232F9D416400BCC6F8 /* BlurIntensity.swift in Sources */,
 				CA9CA59E2AEB33A100794277 /* IdentifiableTypes.swift in Sources */,
 				71D4C5CC2F53CDA0008D372F /* ProfileToolbarItem.swift in Sources */,
@@ -766,6 +773,14 @@
 				minimumVersion = 24.0.0;
 			};
 		};
+		A1B2C3D42E000000AABBCC01 /* XCRemoteSwiftPackageReference "Auth0.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -773,6 +788,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 71C4787F2E3D818300BBCF6E /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		A1B2C3D42E000000AABBCC02 /* Auth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D42E000000AABBCC01 /* XCRemoteSwiftPackageReference "Auth0.swift" */;
+			productName = Auth0;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
