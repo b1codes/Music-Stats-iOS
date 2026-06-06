@@ -48,8 +48,9 @@ resource "aws_lambda_function" "api" {
   architectures    = ["x86_64"]
   filename         = data.archive_file.lambda_zip.output_path
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
-  timeout          = 10
-  memory_size      = 256
+  timeout                        = 15
+  memory_size                    = 256
+  reserved_concurrent_executions = 100
 
   environment {
     variables = {

@@ -7,6 +7,13 @@ resource "aws_apigatewayv2_api" "http_api" {
   name          = "${var.project_name}-api"
   protocol_type = "HTTP"
   description   = "Spotify OAuth proxy for Music Stats iOS"
+
+  cors_configuration {
+    allow_origins = var.cors_allowed_origins
+    allow_methods = ["POST"]
+    allow_headers = ["Content-Type", "Authorization"]
+    max_age       = 300
+  }
 }
 
 resource "aws_apigatewayv2_integration" "lambda" {
@@ -48,8 +55,8 @@ resource "aws_apigatewayv2_stage" "default" {
   }
 
   default_route_settings {
-    throttling_burst_limit = 10
-    throttling_rate_limit  = 5
+    throttling_burst_limit = 200
+    throttling_rate_limit  = 100
   }
 }
 
