@@ -2,9 +2,9 @@ terraform {
   required_version = ">= 1.5.0"
 
   backend "s3" {
-    bucket         = "music-stats-terraform-state"
+    bucket         = "music-stats-tf-state"
     key            = "prod/terraform.tfstate"
-    region         = "us-east-1"
+    region         = "us-east-2"
     dynamodb_table = "music-stats-terraform-locks"
     encrypt        = true
   }
