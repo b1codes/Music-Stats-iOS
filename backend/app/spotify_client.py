@@ -11,9 +11,9 @@ _credentials = None
 def _get_credentials() -> dict:
     global _credentials
     if _credentials is None:
-        client = boto3.client("secretsmanager")
-        response = client.get_secret_value(SecretId=os.environ["SPOTIFY_SECRET_ARN"])
-        _credentials = json.loads(response["SecretString"])
+        client = boto3.client("ssm")
+        response = client.get_parameter(Name=os.environ["SPOTIFY_PARAM_NAME"], WithDecryption=True)
+        _credentials = json.loads(response["Parameter"]["Value"])
     return _credentials
 
 

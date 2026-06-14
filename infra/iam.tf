@@ -20,8 +20,12 @@ resource "aws_iam_role_policy_attachment" "lambda_basic_execution" {
 
 data "aws_iam_policy_document" "read_spotify_secret" {
   statement {
-    actions   = ["secretsmanager:GetSecretValue"]
-    resources = [aws_secretsmanager_secret.spotify_credentials.arn]
+    actions   = ["ssm:GetParameter"]
+    resources = [aws_ssm_parameter.spotify_credentials.arn]
+  }
+  statement {
+    actions   = ["kms:Decrypt"]
+    resources = ["arn:aws:kms:${var.aws_region}:*:alias/aws/ssm"]
   }
 }
 

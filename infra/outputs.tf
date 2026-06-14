@@ -3,17 +3,19 @@ output "api_gateway_url" {
   value       = aws_apigatewayv2_stage.default.invoke_url
 }
 
-output "spotify_secret_name" {
-  description = "Name of the Secrets Manager secret that must be populated before Lambda will function."
-  value       = aws_secretsmanager_secret.spotify_credentials.name
+output "spotify_param_name" {
+  description = "SSM parameter name holding Spotify credentials. Populate after apply if using a fresh deployment."
+  value       = aws_ssm_parameter.spotify_credentials.name
 }
 
 output "secret_population_command" {
-  description = "Run this command after apply to populate Spotify credentials. Lambda will fail until this is done."
+  description = "Run this command after apply to populate real Spotify credentials."
   value       = <<-EOT
-    aws secretsmanager put-secret-value \
-      --secret-id ${aws_secretsmanager_secret.spotify_credentials.name} \
-      --secret-string '{"client_id":"<SPOTIFY_CLIENT_ID>","client_secret":"<SPOTIFY_CLIENT_SECRET>"}'
+    aws ssm put-parameter \
+      --name ${aws_ssm_parameter.spotify_credentials.name} \
+      --type SecureString \
+      --overwrite \
+      --value '{"client_id":"<SPOTIFY_CLIENT_ID>","client_secret":"<SPOTIFY_CLIENT_SECRET>"}'
   EOT
 }
 
