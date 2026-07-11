@@ -17,6 +17,8 @@ struct MusicStatsiOSApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
+                Color.dsCanvas.ignoresSafeArea()
+
                 if authManager.isLoading {
                     ProgressView("Signing in...")
                 } else if !authManager.isAuth0Authenticated {
@@ -29,6 +31,7 @@ struct MusicStatsiOSApp: App {
                 }
             }
             .environmentObject(authManager)
+            .preferredColorScheme(.dark)
         }
     }
 }

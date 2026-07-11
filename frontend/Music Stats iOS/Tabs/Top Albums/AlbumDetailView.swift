@@ -25,12 +25,12 @@ struct AlbumDetailView: View {
                             .scaledToFit()
                     } placeholder: {
                         Rectangle()
-                            .foregroundColor(.gray.opacity(0.3))
+                            .foregroundColor(.dsGlassSurface)
+                            .background(.ultraThinMaterial)
                             .aspectRatio(1, contentMode: .fit)
                             .overlay(ProgressView())
                     }
-                    .cornerRadius(15)
-                    .shadow(radius: 10)
+                    .cornerRadius(.dsRoundedMD)
                     .padding(.bottom, 10)
 
                     Text(albumResponse.name)
@@ -39,7 +39,7 @@ struct AlbumDetailView: View {
 
                     Text(artistsToString(artists: albumResponse.artists))
                         .font(.title2)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.dsInkSecondary)
 
                     Divider()
 
@@ -73,9 +73,7 @@ struct AlbumDetailView: View {
                             Text("Open in Spotify")
                         }
                     }
-                    .buttonStyle(.borderedProminent)
-                    .tint(.spotifyGreen)
-                    .frame(maxWidth: .infinity)
+                    .buttonStyle(.glass)
                     .padding(.top, 8)
 
                     if let contributingSongs = albumData.contributingSongs, !contributingSongs.isEmpty {
@@ -90,7 +88,7 @@ struct AlbumDetailView: View {
                                     NavigationLink(destination: SongDetailView(spotifyId: song.spotifyId, rank: song.rank)) {
                                         SongCard(song: song)
                                     }
-                                    .buttonStyle(PlainButtonStyle())
+                                    .buttonStyle(.glassRow)
                                 }
                             }
                         }
@@ -101,7 +99,7 @@ struct AlbumDetailView: View {
                 .padding()
             } else {
                 Text("Failed to load album details.")
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.dsInkSecondary)
                     .padding(.top, 50)
             }
         }

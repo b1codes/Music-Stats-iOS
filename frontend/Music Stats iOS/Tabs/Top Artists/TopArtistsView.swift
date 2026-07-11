@@ -14,26 +14,35 @@ struct TopArtistsView: View {
                 loadingLabel: "Loading Artists…",
                 emptySymbol: "music.mic",
                 emptyTitle: "No Top Artists Found",
-                emptyDescription: "",
+                emptyDescription: "We couldn't find any top artists for this time period. " +
+                                  "Listen to more music on Spotify to see your top artists here.",
                 onRetry: { userTopItems.retry() }
             ) {
-                ScrollView {
-                    LazyVStack(spacing: 10) {
-                        ForEach(artistsForSelection() ?? []) { artist in
-                            Button {
-                                selectedArtist = artist
-                            } label: {
-                                ArtistCard(artist: artist)
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        LazyVStack(spacing: 10) {
+                            ForEach(artistsForSelection() ?? []) { artist in
+                                Button {
+                                    selectedArtist = artist
+                                } label: {
+                                    ArtistCard(artist: artist)
+                                }
+                                .buttonStyle(.glassRow)
+                                .id(artist.id)
                             }
-                            .buttonStyle(PlainButtonStyle())
-                            .id(artist.id)
+                        }
+                        .padding(.horizontal, 8)
+                        .padding(.top, 10)
+                        .padding(.bottom, 20)
+                    }
+                    // Scroll back to the top on a timeframe switch without tearing down
+                    // and re-fetching every row's artwork (see ForEach's own .id(artist.id)).
+                    .onChange(of: selection) { _, _ in
+                        if let firstID = artistsForSelection()?.first?.id {
+                            proxy.scrollTo(firstID, anchor: .top)
                         }
                     }
-                    .padding(.horizontal, 8)
-                    .padding(.top, 10)
-                    .padding(.bottom, 20)
                 }
-                .id(selection)
             }
             .navigationDestination(item: $selectedArtist) { artist in
                 ArtistDetailView(spotifyId: artist.spotifyId, rank: artist.rank)
@@ -51,6 +60,7 @@ struct TopArtistsView: View {
                     } label: {
                         Image(systemName: "calendar")
                     }
+                    .accessibilityLabel("Time Period: \(timeframeLabel)")
                 }
                 ProfileToolbarItem()
             }
@@ -63,6 +73,14 @@ struct TopArtistsView: View {
         case 1: return userTopItems.topArtistsList["medium"]
         case 2: return userTopItems.topArtistsList["long"]
         default: return nil
+        }
+    }
+
+    private var timeframeLabel: String {
+        switch selection {
+        case 0: return "Past Month"
+        case 1: return "Past 6 Months"
+        default: return "Past Years"
         }
     }
 }

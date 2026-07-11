@@ -16,7 +16,7 @@ struct SettingsView: View {
                             } placeholder: {
                                 Image(systemName: "person.circle.fill")
                                     .resizable()
-                                    .foregroundColor(.secondary)
+                                    .foregroundColor(.dsInkSecondary)
                             }
                             .frame(width: 50, height: 50)
                             .clipShape(Circle())
@@ -26,7 +26,7 @@ struct SettingsView: View {
                                     .font(.headline)
                                 Text(profile.email ?? "No email provided")
                                     .font(.subheadline)
-                                    .foregroundColor(.secondary)
+                                    .foregroundColor(.dsInkSecondary)
                             }
                         }
                         .padding(.vertical, 4)

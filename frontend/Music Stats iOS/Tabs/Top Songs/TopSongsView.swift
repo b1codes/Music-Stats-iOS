@@ -14,26 +14,35 @@ struct TopSongsView: View {
                 loadingLabel: "Loading Songs…",
                 emptySymbol: "music.note",
                 emptyTitle: "No Top Songs Found",
-                emptyDescription: "",
+                emptyDescription: "We couldn't find any top songs for this time period. " +
+                                  "Listen to more music on Spotify to see your top tracks here.",
                 onRetry: { userTopItems.retry() }
             ) {
-                ScrollView {
-                    LazyVStack(spacing: 10) {
-                        ForEach(songsForSelection() ?? []) { song in
-                            Button {
-                                selectedSong = song
-                            } label: {
-                                SongCard(song: song)
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        LazyVStack(spacing: 10) {
+                            ForEach(songsForSelection() ?? []) { song in
+                                Button {
+                                    selectedSong = song
+                                } label: {
+                                    SongCard(song: song)
+                                }
+                                .buttonStyle(.glassRow)
+                                .id(song.id)
                             }
-                            .buttonStyle(PlainButtonStyle())
-                            .id(song.id)
+                        }
+                        .padding(.horizontal, 8)
+                        .padding(.top, 10)
+                        .padding(.bottom, 20)
+                    }
+                    // Scroll back to the top on a timeframe switch without tearing down
+                    // and re-fetching every row's artwork (see ForEach's own .id(song.id)).
+                    .onChange(of: selection) { _, _ in
+                        if let firstID = songsForSelection()?.first?.id {
+                            proxy.scrollTo(firstID, anchor: .top)
                         }
                     }
-                    .padding(.horizontal, 8)
-                    .padding(.top, 10)
-                    .padding(.bottom, 20)
                 }
-                .id(selection)
             }
             .navigationDestination(item: $selectedSong) { song in
                 SongDetailView(spotifyId: song.spotifyId, rank: song.rank)
@@ -51,6 +60,7 @@ struct TopSongsView: View {
                     } label: {
                         Image(systemName: "calendar")
                     }
+                    .accessibilityLabel("Time Period: \(timeframeLabel)")
                 }
                 ProfileToolbarItem()
             }
@@ -63,6 +73,14 @@ struct TopSongsView: View {
         case 1: return userTopItems.topSongsList["medium"]
         case 2: return userTopItems.topSongsList["long"]
         default: return nil
+        }
+    }
+
+    private var timeframeLabel: String {
+        switch selection {
+        case 0: return "Past Month"
+        case 1: return "Past 6 Months"
+        default: return "Past Years"
         }
     }
 }

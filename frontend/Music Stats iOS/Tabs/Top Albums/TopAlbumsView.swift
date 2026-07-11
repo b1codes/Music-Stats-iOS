@@ -18,23 +18,31 @@ struct TopAlbumsView: View {
                                   "Listen to more songs from the same album to see them here!",
                 onRetry: { userTopItems.retry() }
             ) {
-                ScrollView {
-                    LazyVStack(spacing: 10) {
-                        ForEach(albumsForSelection() ?? []) { album in
-                            Button {
-                                selectedAlbum = album
-                            } label: {
-                                AlbumCard(album: album)
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        LazyVStack(spacing: 10) {
+                            ForEach(albumsForSelection() ?? []) { album in
+                                Button {
+                                    selectedAlbum = album
+                                } label: {
+                                    AlbumCard(album: album)
+                                }
+                                .buttonStyle(.glassRow)
+                                .id(album.id)
                             }
-                            .buttonStyle(PlainButtonStyle())
-                            .id(album.id)
+                        }
+                        .padding(.horizontal, 8)
+                        .padding(.top, 10)
+                        .padding(.bottom, 20)
+                    }
+                    // Scroll back to the top on a timeframe switch without tearing down
+                    // and re-fetching every row's artwork (see ForEach's own .id(album.id)).
+                    .onChange(of: selection) { _, _ in
+                        if let firstID = albumsForSelection()?.first?.id {
+                            proxy.scrollTo(firstID, anchor: .top)
                         }
                     }
-                    .padding(.horizontal, 8)
-                    .padding(.top, 10)
-                    .padding(.bottom, 20)
                 }
-                .id(selection)
             }
             .navigationDestination(item: $selectedAlbum) { album in
                 AlbumDetailView(albumData: album)
@@ -65,6 +73,7 @@ struct TopAlbumsView: View {
             } label: {
                 Image(systemName: "calendar")
             }
+            .accessibilityLabel("Time Period: \(timeframeLabel)")
         }
     }
 
@@ -74,6 +83,14 @@ struct TopAlbumsView: View {
         case 1: return userTopItems.topAlbumsList["medium"]
         case 2: return userTopItems.topAlbumsList["long"]
         default: return nil
+        }
+    }
+
+    private var timeframeLabel: String {
+        switch selection {
+        case 0: return "Past Month"
+        case 1: return "Past 6 Months"
+        default: return "Past Years"
         }
     }
 }

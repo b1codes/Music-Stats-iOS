@@ -40,7 +40,11 @@
 		CAEBBA4A2AE74B3000ABE21B /* MusicStatsiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBBA492AE74B3000ABE21B /* MusicStatsiOSUITestsLaunchTests.swift */; };
 		CAEBD6592AF428420086B01D /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBD6582AF428420086B01D /* AuthorizationView.swift */; };
 		CAEBD65B2AF458890086B01D /* UserTopItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBD65A2AF458890086B01D /* UserTopItems.swift */; };
-		COLOR_BUILD_FILE_999 /* Extensions/Color+Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = COLOR_FILE_REF_9999 /* Extensions/Color+Spotify.swift */; };
+		COLORDS_BUILD_FILE_001 /* Extensions/Color+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = COLORDS_FILE_REF_001 /* Extensions/Color+DesignSystem.swift */; };
+		CGFLOATDS_BUILD_FILE_001 /* Extensions/CGFloat+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CGFLOATDS_FILE_REF_001 /* Extensions/CGFloat+DesignSystem.swift */; };
+		GLASSROW_BUILD_FILE_001 /* GlassListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = GLASSROW_FILE_REF_001 /* GlassListRow.swift */; };
+		GLASSBTN_BUILD_FILE_001 /* GlassButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = GLASSBTN_FILE_REF_001 /* GlassButtonStyle.swift */; };
+		GLASSROWBTN_BUILD_FILE_001 /* GlassRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = GLASSROWBTN_FILE_REF_001 /* GlassRowButtonStyle.swift */; };
 		EF2E7A89AC96FA92771F953F /* StateContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DBF01831258479E5887FA /* StateContainerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,7 +104,11 @@
 		CAEBD6582AF428420086B01D /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		CAEBD65A2AF458890086B01D /* UserTopItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTopItems.swift; sourceTree = "<group>"; };
 		CE349B6D280C4DB6BBC0B218 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
-		COLOR_FILE_REF_9999 /* Extensions/Color+Spotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions/Color+Spotify.swift"; sourceTree = "<group>"; };
+		COLORDS_FILE_REF_001 /* Extensions/Color+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions/Color+DesignSystem.swift"; sourceTree = "<group>"; };
+		CGFLOATDS_FILE_REF_001 /* Extensions/CGFloat+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions/CGFloat+DesignSystem.swift"; sourceTree = "<group>"; };
+		GLASSROW_FILE_REF_001 /* GlassListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassListRow.swift; sourceTree = "<group>"; };
+		GLASSBTN_FILE_REF_001 /* GlassButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassButtonStyle.swift; sourceTree = "<group>"; };
+		GLASSROWBTN_FILE_REF_001 /* GlassRowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassRowButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +240,9 @@
 				71D4C5C92F534CD6008D372F /* DetailRow.swift */,
 				71D4C5CB2F53CDA0008D372F /* ProfileToolbarItem.swift */,
 				0B3DBF01831258479E5887FA /* StateContainerView.swift */,
+				GLASSROW_FILE_REF_001 /* GlassListRow.swift */,
+				GLASSBTN_FILE_REF_001 /* GlassButtonStyle.swift */,
+				GLASSROWBTN_FILE_REF_001 /* GlassRowButtonStyle.swift */,
 				EXT_GROUP_9999 /* Extensions */,
 			);
 			path = "Music Stats iOS";
@@ -266,7 +277,8 @@
 		EXT_GROUP_9999 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				COLOR_FILE_REF_9999 /* Extensions/Color+Spotify.swift */,
+				COLORDS_FILE_REF_001 /* Extensions/Color+DesignSystem.swift */,
+				CGFLOATDS_FILE_REF_001 /* Extensions/CGFloat+DesignSystem.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -431,7 +443,11 @@
 				9FA0D6EDD6FA458ABD679D2F /* ViewState.swift in Sources */,
 				EF2E7A89AC96FA92771F953F /* StateContainerView.swift in Sources */,
 				C861EF6B7E874DADB655153F /* NetworkError.swift in Sources */,
-				COLOR_BUILD_FILE_999 /* Extensions/Color+Spotify.swift in Sources */,
+				COLORDS_BUILD_FILE_001 /* Extensions/Color+DesignSystem.swift in Sources */,
+				CGFLOATDS_BUILD_FILE_001 /* Extensions/CGFloat+DesignSystem.swift in Sources */,
+				GLASSROW_BUILD_FILE_001 /* GlassListRow.swift in Sources */,
+				GLASSBTN_BUILD_FILE_001 /* GlassButtonStyle.swift in Sources */,
+				GLASSROWBTN_BUILD_FILE_001 /* GlassRowButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

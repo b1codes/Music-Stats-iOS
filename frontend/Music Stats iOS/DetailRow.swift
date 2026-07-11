@@ -9,7 +9,7 @@ struct DetailRow: View {
     var body: some View {
         HStack {
             Text(label)
-                .foregroundColor(.secondary)
+                .foregroundColor(.dsInkSecondary)
                 .bold()
             Spacer()
             Text(value)

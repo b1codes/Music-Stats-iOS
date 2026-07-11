@@ -23,7 +23,7 @@ struct StateContainerView<Content: View>: View {
             VStack(spacing: 20) {
                 Image(systemName: "exclamationmark.triangle")
                     .font(.system(size: 60))
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.dsInkSecondary)
                 Text("Something went wrong")
                     .font(.title2)
                     .bold()
@@ -35,13 +35,13 @@ struct StateContainerView<Content: View>: View {
             VStack(spacing: 20) {
                 Image(systemName: emptySymbol)
                     .font(.system(size: 60))
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.dsInkSecondary)
                 Text(emptyTitle)
                     .font(.title2)
                     .bold()
                 Text(emptyDescription)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.dsInkSecondary)
                     .padding(.horizontal, 40)
             }
             .padding()

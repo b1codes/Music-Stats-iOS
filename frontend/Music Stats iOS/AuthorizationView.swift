@@ -15,7 +15,7 @@ struct AuthorizationView: View {
         VStack(spacing: 24) {
             Image("AppIcon")
                 .resizable()
-                .cornerRadius(30.0)
+                .cornerRadius(.dsRoundedMD)
                 .scaledToFill()
                 .frame(width: 200, height: 200)
 
@@ -24,7 +24,7 @@ struct AuthorizationView: View {
                 .bold()
 
             Text("Sign in to get started")
-                .foregroundColor(.secondary)
+                .foregroundColor(.dsInkSecondary)
 
             Button("Sign In") {
                 authManager.login()

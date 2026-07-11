@@ -20,7 +20,7 @@ struct SpotifyConnectionView: View {
         VStack(spacing: 24) {
             Image(systemName: "music.note.list")
                 .font(.system(size: 60))
-                .foregroundColor(.green)
+                .foregroundColor(.dsInkPrimary)
 
             Text("Connect Spotify")
                 .font(.title)
@@ -28,7 +28,7 @@ struct SpotifyConnectionView: View {
 
             Text("Connect your Spotify account to see your top songs, albums, and artists.")
                 .multilineTextAlignment(.center)
-                .foregroundColor(.secondary)
+                .foregroundColor(.dsInkSecondary)
                 .padding(.horizontal)
 
             Button("Connect Spotify") {

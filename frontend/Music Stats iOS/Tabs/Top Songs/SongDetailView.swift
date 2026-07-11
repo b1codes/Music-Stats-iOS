@@ -33,12 +33,12 @@ struct SongDetailView: View {
                             .scaledToFit()
                     } placeholder: {
                         Rectangle()
-                            .foregroundColor(.gray.opacity(0.3))
+                            .foregroundColor(.dsGlassSurface)
+                            .background(.ultraThinMaterial)
                             .aspectRatio(1, contentMode: .fit)
                             .overlay(ProgressView())
                     }
-                    .cornerRadius(15)
-                    .shadow(radius: 10)
+                    .cornerRadius(.dsRoundedMD)
                     .padding(.bottom, 10)
 
                     Text(song.name)
@@ -47,7 +47,7 @@ struct SongDetailView: View {
 
                     Text(artistsToString(artists: song.artists))
                         .font(.title2)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.dsInkSecondary)
 
                     Divider()
 
@@ -62,14 +62,14 @@ struct SongDetailView: View {
                     }
                     .padding(.top, 10)
 
-                    Button("Open in Spotify") {
+                    Button {
                         if let url = URL(string: "https://open.spotify.com/track/\(spotifyId)") {
                             UIApplication.shared.open(url)
                         }
+                    } label: {
+                        Text("Open in Spotify")
                     }
-                    .buttonStyle(.borderedProminent)
-                    .tint(.spotifyGreen)
-                    .frame(maxWidth: .infinity)
+                    .buttonStyle(.glass)
                     .padding(.top, 8)
 
                     Spacer()
@@ -77,7 +77,7 @@ struct SongDetailView: View {
                 .padding()
             } else {
                 Text("Failed to load track details.")
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.dsInkSecondary)
                     .padding(.top, 50)
             }
         }
