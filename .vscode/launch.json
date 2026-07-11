@@ -1,0 +1,177 @@
+{
+  // VS Code Run & Debug launch configurations for Music Stats iOS
+  // Requires the 'xcodebuild' extension (or use tasks.json) for Swift targets.
+  // Swift configs use type "shell" via the built-in task runner.
+  // Covers: FastAPI backend (dev server) and pytest test suite.
+  "version": "0.2.0",
+  "configurations": [
+    // ─────────────────────────────────────────────────────────────
+    // Backend – FastAPI dev server (uvicorn, auto-reload)
+    // ─────────────────────────────────────────────────────────────
+    {
+      "name": "Backend: Run (uvicorn)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000",
+        "--reload"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+
+    // ─────────────────────────────────────────────────────────────
+    // Backend – Debug FastAPI dev server (breakpoints enabled)
+    // Note: --reload is omitted so the debugger attaches cleanly.
+    // ─────────────────────────────────────────────────────────────
+    {
+      "name": "Backend: Debug (uvicorn, no reload)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+
+    // ─────────────────────────────────────────────────────────────
+    // Backend – Run all pytest tests
+    // ─────────────────────────────────────────────────────────────
+    {
+      "name": "Backend: Tests (pytest, all)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "tests/",
+        "-v"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+
+    // ─────────────────────────────────────────────────────────────
+    // Backend – Debug currently open test file
+    // ─────────────────────────────────────────────────────────────
+    {
+      "name": "Backend: Debug current test file",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "${file}",
+        "-v",
+        "-s"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+
+    // ─────────────────────────────────────────────────────────────
+    // Frontend (iOS) – Build & run on iPhone 17 Pro simulator
+    // Uses xcodebuild + xcrun simctl to install and launch the app.
+    // ─────────────────────────────────────────────────────────────
+    {
+      "name": "Frontend: Run on Simulator (iPhone 17 Pro)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "xcodebuild -project 'frontend/Music Stats iOS.xcodeproj' -scheme 'Music Stats iOS' -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' -derivedDataPath build/DerivedData build && xcrun simctl boot 'iPhone 17 Pro' 2>/dev/null; xcrun simctl install 'iPhone 17 Pro' $(find build/DerivedData -name 'Music Stats iOS.app' | head -1) && xcrun simctl launch --console-pty 'iPhone 17 Pro' $(xcrun simctl listapps 'iPhone 17 Pro' 2>/dev/null | python3 -c \"import json,sys; apps=json.load(sys.stdin); [print(v['CFBundleIdentifier']) for v in apps.values() if 'Music Stats iOS' in v.get('CFBundleDisplayName','')]\" | head -1)",
+      "cwd": "${workspaceFolder}",
+      "env": {}
+    },
+
+    // ─────────────────────────────────────────────────────────────
+    // Frontend (iOS) – Clean build only (no launch)
+    // ─────────────────────────────────────────────────────────────
+    {
+      "name": "Frontend: Build (Debug, simulator)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "xcodebuild -project 'frontend/Music Stats iOS.xcodeproj' -scheme 'Music Stats iOS' -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' -derivedDataPath build/DerivedData build | xcpretty || xcodebuild -project 'frontend/Music Stats iOS.xcodeproj' -scheme 'Music Stats iOS' -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' -derivedDataPath build/DerivedData build",
+      "cwd": "${workspaceFolder}",
+      "env": {}
+    },
+
+    // ─────────────────────────────────────────────────────────────
+    // Frontend (iOS) – Run unit tests (Music Stats iOSTests)
+    // ─────────────────────────────────────────────────────────────
+    {
+      "name": "Frontend: Tests – Unit (Music Stats iOSTests)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "xcodebuild test -project 'frontend/Music Stats iOS.xcodeproj' -scheme 'Music Stats iOS' -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' -testPlan 'Music Stats iOSTests' -derivedDataPath build/DerivedData 2>&1 | tee /tmp/xcodebuild-unit-test.log; grep -E '(Test Suite|PASSED|FAILED|error:)' /tmp/xcodebuild-unit-test.log",
+      "cwd": "${workspaceFolder}",
+      "env": {}
+    },
+
+    // ─────────────────────────────────────────────────────────────
+    // Frontend (iOS) – Run UI tests (Music Stats iOSUITests)
+    // ─────────────────────────────────────────────────────────────
+    {
+      "name": "Frontend: Tests – UI (Music Stats iOSUITests)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "xcodebuild test -project 'frontend/Music Stats iOS.xcodeproj' -scheme 'Music Stats iOS' -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' -only-testing:'Music Stats iOSUITests' -derivedDataPath build/DerivedData 2>&1 | tee /tmp/xcodebuild-ui-test.log; grep -E '(Test Suite|PASSED|FAILED|error:)' /tmp/xcodebuild-ui-test.log",
+      "cwd": "${workspaceFolder}",
+      "env": {}
+    }
+  ],
+
+  // ─────────────────────────────────────────────────────────────
+  // Compound configs – launch multiple targets at once
+  // ─────────────────────────────────────────────────────────────
+  "compounds": [
+    {
+      // Starts the FastAPI dev server AND boots + runs the iOS app
+      // on the simulator simultaneously. Both appear as separate
+      // debug sessions in the VS Code "Call Stack" panel.
+      "name": "Full Stack: Backend + iOS Simulator",
+      "configurations": [
+        "Backend: Run (uvicorn)",
+        "Frontend: Run on Simulator (iPhone 17 Pro)"
+      ],
+      "stopAll": true
+    },
+    {
+      // Same as above but with the debuggable backend (no --reload)
+      // so you can set breakpoints in both Python and Swift at once.
+      "name": "Full Stack: Debug Backend + iOS Simulator",
+      "configurations": [
+        "Backend: Debug (uvicorn, no reload)",
+        "Frontend: Run on Simulator (iPhone 17 Pro)"
+      ],
+      "stopAll": true
+    }
+  ]
+}
