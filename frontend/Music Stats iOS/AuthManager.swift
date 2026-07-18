@@ -119,7 +119,7 @@ class AuthManager: ObservableObject {
 
         components.queryItems = [
             URLQueryItem(name: "state", value: state),
-            URLQueryItem(name: "scope", value: "user-read-private user-read-email user-top-read"),
+            URLQueryItem(name: "scope", value: "user-read-private user-read-email user-top-read user-read-recently-played"),
             URLQueryItem(name: "response_type", value: "code"),
             URLQueryItem(name: "redirect_uri", value: redirectURI),
             URLQueryItem(name: "client_id", value: spotifyClientID),

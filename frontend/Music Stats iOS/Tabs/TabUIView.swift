@@ -32,6 +32,12 @@ struct TabUIView: View {
                         Text("Top Artists")
                     }
 
+                RecentlyPlayedView(userTopItems: userTopItems)
+                    .tabItem {
+                        Image(systemName: "clock.arrow.circlepath")
+                        Text("Recent")
+                    }
+ 
                 SettingsView()
                     .tabItem {
                         Image(systemName: "gearshape")

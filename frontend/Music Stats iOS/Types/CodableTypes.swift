@@ -108,3 +108,31 @@ struct AccessTokenResponse: Codable {
         case refreshToken = "refresh_token"
     }
 }
+
+struct RecentlyPlayedResponse: Codable {
+    let items: [PlayRecordResponse]
+    let next: String?
+    let cursors: CursorResponse?
+}
+
+struct PlayRecordResponse: Codable {
+    let track: SongResponse
+    let playedAt: String
+    let context: ContextResponse?
+    
+    enum CodingKeys: String, CodingKey {
+        case track
+        case playedAt = "played_at"
+        case context
+    }
+}
+
+struct CursorResponse: Codable {
+    let after: String?
+    let before: String?
+}
+
+struct ContextResponse: Codable {
+    let type: String
+    let uri: String
+}

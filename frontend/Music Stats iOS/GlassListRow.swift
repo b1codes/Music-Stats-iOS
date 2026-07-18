@@ -14,6 +14,7 @@ struct GlassListRow: View {
     let subtitle: String?
     let imageURL: URL?
     let accessibilityLabel: String
+    var isRecent: Bool = false
 
     var body: some View {
         // Load the artwork once; reuse the decoded image for both the thumbnail
@@ -45,10 +46,24 @@ struct GlassListRow: View {
             .padding(.vertical, 10)
 
             // 3. Title and Subtitle
-            VStack(alignment: .leading) {
-                Text(title)
-                    .bold()
-                    .lineLimit(2)
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(alignment: .center, spacing: 6) {
+                    Text(title)
+                        .bold()
+                        .lineLimit(2)
+                    
+                    if isRecent {
+                        Text("RECENT")
+                            .font(.system(size: 8, weight: .bold))
+                            .foregroundColor(.dsInkPrimary)
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, 2)
+                            .background(Color.dsThermalCorona.opacity(0.8))
+                            .cornerRadius(4)
+                            .fixedSize()
+                    }
+                }
+                
                 if let subtitle {
                     Text(subtitle)
                         .lineLimit(1)

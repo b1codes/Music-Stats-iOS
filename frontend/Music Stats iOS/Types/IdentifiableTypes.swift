@@ -76,3 +76,21 @@ struct UserProfile: Identifiable, Hashable {
 //    var height: Int?
 //    var width: Int?
 // }
+
+struct PlayRecord: Identifiable, Hashable {
+    var id: String {
+        return "\(spotifyId)-\(playedAt.timeIntervalSince1970)"
+    }
+    let spotifyId: String
+    let name: String
+    let artists: [Artist]
+    let album: Album
+    let playedAt: Date
+    let durationMs: Int
+    
+    var relativeTime: String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .abbreviated
+        return formatter.localizedString(for: playedAt, relativeTo: Date())
+    }
+}

@@ -14,6 +14,7 @@ class UserTopItems: ObservableObject {
     @Published var topSongsList: [String: [Song]]
     @Published var topArtistsList: [String: [Artist]]
     @Published var topAlbumsList: [String: [Album]]
+    @Published var recentlyPlayedList: [PlayRecord]
     @Published var userProfile: UserProfile?
     @Published var fetchState: ViewState = .loading
     var accessToken: String
@@ -25,6 +26,7 @@ class UserTopItems: ObservableObject {
         self.topSongsList = [:]
         self.topArtistsList = [:]
         self.topAlbumsList = [:]
+        self.recentlyPlayedList = []
         self.userProfile = nil
         self.accessToken = ""
         self.tokenType = ""
@@ -121,8 +123,10 @@ class UserTopItems: ObservableObject {
         do {
             async let songs: Void = getTopSongs()
             async let artists: Void = getTopArtists()
+            async let recent: Void = getRecentlyPlayed()
             try await songs
             try await artists
+            try await recent
             fetchState = .content
         } catch {
             fetchState = .error
@@ -136,9 +140,76 @@ class UserTopItems: ObservableObject {
         topSongsList = [:]
         topArtistsList = [:]
         topAlbumsList = [:]
+        recentlyPlayedList = []
         Task {
             await getUserProfile()
             await fetchAll()
+        }
+    }
+
+    private func parseSpotifyDate(_ dateString: String) -> Date {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        if let date = formatter.date(from: dateString) {
+            return date
+        }
+        // Fallback without fractional seconds
+        let fallbackFormatter = ISO8601DateFormatter()
+        fallbackFormatter.formatOptions = [.withInternetDateTime]
+        return fallbackFormatter.date(from: dateString) ?? Date()
+    }
+
+    func getRecentlyPlayed() async throws {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "api.spotify.com"
+        components.path = "/v1/me/player/recently-played"
+        components.queryItems = [
+            URLQueryItem(name: "limit", value: "50")
+        ]
+
+        guard let url = components.url else { throw URLError(.badURL) }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = ["Authorization": "\(tokenType) \(accessToken)"]
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse,
+              (200...299).contains(httpResponse.statusCode) else {
+            let code = (response as? HTTPURLResponse)?.statusCode ?? 0
+            throw NetworkError.badStatusCode(code)
+        }
+
+        let decodedResponse = try JSONDecoder().decode(RecentlyPlayedResponse.self, from: data)
+        self.recentlyPlayedList = decodedResponse.items.map { playResponse in
+            let songResponse = playResponse.track
+            let album = Album(
+                id: "recent-album-\(songResponse.album.id)",
+                spotifyId: songResponse.album.id,
+                rank: nil,
+                images: songResponse.album.images,
+                name: songResponse.album.name,
+                artists: songResponse.artists.map {
+                    Artist(id: "recent-album-artist-\($0.id)", spotifyId: $0.id, name: $0.name)
+                },
+                releaseDate: songResponse.album.releaseDate,
+                totalTracks: songResponse.album.totalTracks
+            )
+            let artists = songResponse.artists.map {
+                Artist(id: "recent-song-artist-\($0.id)", spotifyId: $0.id, name: $0.name)
+            }
+            let playedAtDate = parseSpotifyDate(playResponse.playedAt)
+            
+            return PlayRecord(
+                spotifyId: songResponse.id,
+                name: songResponse.name,
+                artists: artists,
+                album: album,
+                playedAt: playedAtDate,
+                durationMs: songResponse.durationMs
+            )
         }
     }
 
@@ -246,6 +317,7 @@ class UserTopItems: ObservableObject {
         topSongsList = [:]
         topArtistsList = [:]
         topAlbumsList = [:]
+        recentlyPlayedList = []
         userProfile = nil
         accessToken = ""
         tokenType = ""

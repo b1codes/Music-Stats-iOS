@@ -1,820 +1,1970 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 56;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		7101594F2E7F0F7D0038295C /* GlassIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 7101594E2E7F0F7D0038295C /* GlassIcon.icon */; };
-		71C478812E3D818300BBCF6E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 71C478802E3D818300BBCF6E /* KeychainSwift */; };
-		A1B2C3D42E000000AABBCC03 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42E000000AABBCC02 /* Auth0 */; };
-		A1B2C3D42E000000AABBCC05 /* SpotifyConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D42E000000AABBCC04 /* SpotifyConnectionView.swift */; };
-		71C478832E3D861C00BBCF6E /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C478822E3D861C00BBCF6E /* AuthManager.swift */; };
-		71C6CF232F9D416400BCC6F8 /* BlurIntensity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6CF222F9D416300BCC6F8 /* BlurIntensity.swift */; };
-		71C6CF252F9D416400BCC6F8 /* EnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6CF242F9D416400BCC6F8 /* EnvironmentKeys.swift */; };
-		71C6CF272F9D416700BCC6F8 /* BlurIntensityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6CF262F9D416700BCC6F8 /* BlurIntensityTests.swift */; };
-		71C6CF2A2F9D41B200BCC6F8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6CF292F9D41B200BCC6F8 /* SettingsView.swift */; };
-		71D4C5C62F534CB1008D372F /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4C5C52F534CB1008D372F /* SongDetailView.swift */; };
-		71D4C5C82F534CBD008D372F /* ArtistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4C5C72F534CBD008D372F /* ArtistDetailView.swift */; };
-		71D4C5CA2F534CD6008D372F /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4C5C92F534CD6008D372F /* DetailRow.swift */; };
-		71D4C5CC2F53CDA0008D372F /* ProfileToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4C5CB2F53CDA0008D372F /* ProfileToolbarItem.swift */; };
-		71D4C5DC2F545997008D372F /* AlbumCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4C5DB2F545997008D372F /* AlbumCard.swift */; };
-		71D4C5DE2F5459A6008D372F /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4C5DD2F5459A6008D372F /* AlbumDetailView.swift */; };
-		71D4C5E02F5459AC008D372F /* TopAlbumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4C5DF2F5459AC008D372F /* TopAlbumsView.swift */; };
-		9FA0D6EDD6FA458ABD679D2F /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE349B6D280C4DB6BBC0B218 /* ViewState.swift */; };
-		C861EF6B7E874DADB655153F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEF7447D03940D6A9B77EBA /* NetworkError.swift */; };
-		CA0E11952B347B9500792E68 /* ArtistCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0E11942B347B9500792E68 /* ArtistCard.swift */; };
-		CA3A7A5D2C472EFC0064F3DC /* MusicStatsiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBBA2C2AE74B2B00ABE21B /* MusicStatsiOSApp.swift */; };
-		CA6BBC712AE8554000CB99EC /* TabUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6BBC702AE8554000CB99EC /* TabUIView.swift */; };
-		CA9CA59E2AEB33A100794277 /* IdentifiableTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CA59D2AEB33A100794277 /* IdentifiableTypes.swift */; };
-		CA9CC0E02AE9CC0000868478 /* TopSongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CC0DF2AE9CC0000868478 /* TopSongsView.swift */; };
-		CA9CC0E42AE9CD0A00868478 /* TopArtistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CC0E32AE9CD0A00868478 /* TopArtistsView.swift */; };
-		CA9CC0E62AE9CDE100868478 /* SongCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CC0E52AE9CDE100868478 /* SongCard.swift */; };
-		CA9CC0EA2AE9D99900868478 /* CodableTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CC0E92AE9D99900868478 /* CodableTypes.swift */; };
-		CAEBBA312AE74B2F00ABE21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAEBBA302AE74B2F00ABE21B /* Assets.xcassets */; };
-		CAEBBA342AE74B2F00ABE21B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAEBBA332AE74B2F00ABE21B /* Preview Assets.xcassets */; };
-		AUTH0PLIST_BUILD_FILE_001 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = AUTH0PLIST_FILE_REF_001 /* Auth0.plist */; };
-		CAEBBA3E2AE74B3000ABE21B /* MusicStatsiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBBA3D2AE74B3000ABE21B /* MusicStatsiOSTests.swift */; };
-		CAEBBA482AE74B3000ABE21B /* MusicStatsiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBBA472AE74B3000ABE21B /* MusicStatsiOSUITests.swift */; };
-		CAEBBA4A2AE74B3000ABE21B /* MusicStatsiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBBA492AE74B3000ABE21B /* MusicStatsiOSUITestsLaunchTests.swift */; };
-		CAEBD6592AF428420086B01D /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBD6582AF428420086B01D /* AuthorizationView.swift */; };
-		CAEBD65B2AF458890086B01D /* UserTopItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBD65A2AF458890086B01D /* UserTopItems.swift */; };
-		COLORDS_BUILD_FILE_001 /* Extensions/Color+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = COLORDS_FILE_REF_001 /* Extensions/Color+DesignSystem.swift */; };
-		CGFLOATDS_BUILD_FILE_001 /* Extensions/CGFloat+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CGFLOATDS_FILE_REF_001 /* Extensions/CGFloat+DesignSystem.swift */; };
-		GLASSROW_BUILD_FILE_001 /* GlassListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = GLASSROW_FILE_REF_001 /* GlassListRow.swift */; };
-		GLASSBTN_BUILD_FILE_001 /* GlassButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = GLASSBTN_FILE_REF_001 /* GlassButtonStyle.swift */; };
-		GLASSROWBTN_BUILD_FILE_001 /* GlassRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = GLASSROWBTN_FILE_REF_001 /* GlassRowButtonStyle.swift */; };
-		EF2E7A89AC96FA92771F953F /* StateContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DBF01831258479E5887FA /* StateContainerView.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CAEBBA3A2AE74B3000ABE21B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CAEBBA212AE74B2B00ABE21B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CAEBBA282AE74B2B00ABE21B;
-			remoteInfo = "Music Stats iOS";
-		};
-		CAEBBA442AE74B3000ABE21B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CAEBBA212AE74B2B00ABE21B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CAEBBA282AE74B2B00ABE21B;
-			remoteInfo = "Music Stats iOS";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		0B3DBF01831258479E5887FA /* StateContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateContainerView.swift; sourceTree = "<group>"; };
-		7101594E2E7F0F7D0038295C /* GlassIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = GlassIcon.icon; sourceTree = "<group>"; };
-		71C478822E3D861C00BBCF6E /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		A1B2C3D42E000000AABBCC04 /* SpotifyConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyConnectionView.swift; sourceTree = "<group>"; };
-		71C6CF222F9D416300BCC6F8 /* BlurIntensity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurIntensity.swift; sourceTree = "<group>"; };
-		71C6CF242F9D416400BCC6F8 /* EnvironmentKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentKeys.swift; sourceTree = "<group>"; };
-		71C6CF262F9D416700BCC6F8 /* BlurIntensityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurIntensityTests.swift; sourceTree = "<group>"; };
-		71C6CF292F9D41B200BCC6F8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		71D4C5C52F534CB1008D372F /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
-		71D4C5C72F534CBD008D372F /* ArtistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailView.swift; sourceTree = "<group>"; };
-		71D4C5C92F534CD6008D372F /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
-		71D4C5CB2F53CDA0008D372F /* ProfileToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileToolbarItem.swift; sourceTree = "<group>"; };
-		71D4C5DB2F545997008D372F /* AlbumCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCard.swift; sourceTree = "<group>"; };
-		71D4C5DD2F5459A6008D372F /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
-		71D4C5DF2F5459AC008D372F /* TopAlbumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsView.swift; sourceTree = "<group>"; };
-		71E379202CE526900016B8A8 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		AUTH0PLIST_FILE_REF_001 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
-		7AEF7447D03940D6A9B77EBA /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		CA0E11942B347B9500792E68 /* ArtistCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCard.swift; sourceTree = "<group>"; };
-		CA265FF42C49576A00C1B3DB /* Sample.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Sample.xcconfig; sourceTree = "<group>"; };
-		CA3A7A5A2C4729430064F3DC /* Music-Stats-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Music-Stats-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
-		CA6BBC702AE8554000CB99EC /* TabUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabUIView.swift; sourceTree = "<group>"; };
-		CA9CA59D2AEB33A100794277 /* IdentifiableTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableTypes.swift; sourceTree = "<group>"; };
-		CA9CC0DF2AE9CC0000868478 /* TopSongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSongsView.swift; sourceTree = "<group>"; };
-		CA9CC0E32AE9CD0A00868478 /* TopArtistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopArtistsView.swift; sourceTree = "<group>"; };
-		CA9CC0E52AE9CDE100868478 /* SongCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCard.swift; sourceTree = "<group>"; };
-		CA9CC0E92AE9D99900868478 /* CodableTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTypes.swift; sourceTree = "<group>"; };
-		CAEBBA292AE74B2B00ABE21B /* Music Stats iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Stats iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAEBBA2C2AE74B2B00ABE21B /* MusicStatsiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStatsiOSApp.swift; sourceTree = "<group>"; };
-		CAEBBA302AE74B2F00ABE21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CAEBBA332AE74B2F00ABE21B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CAEBBA392AE74B3000ABE21B /* Music Stats iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Music Stats iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAEBBA3D2AE74B3000ABE21B /* MusicStatsiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStatsiOSTests.swift; sourceTree = "<group>"; };
-		CAEBBA432AE74B3000ABE21B /* Music Stats iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Music Stats iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAEBBA472AE74B3000ABE21B /* MusicStatsiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStatsiOSUITests.swift; sourceTree = "<group>"; };
-		CAEBBA492AE74B3000ABE21B /* MusicStatsiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStatsiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CAEBD6582AF428420086B01D /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
-		CAEBD65A2AF458890086B01D /* UserTopItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTopItems.swift; sourceTree = "<group>"; };
-		CE349B6D280C4DB6BBC0B218 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
-		COLORDS_FILE_REF_001 /* Extensions/Color+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions/Color+DesignSystem.swift"; sourceTree = "<group>"; };
-		CGFLOATDS_FILE_REF_001 /* Extensions/CGFloat+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions/CGFloat+DesignSystem.swift"; sourceTree = "<group>"; };
-		GLASSROW_FILE_REF_001 /* GlassListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassListRow.swift; sourceTree = "<group>"; };
-		GLASSBTN_FILE_REF_001 /* GlassButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassButtonStyle.swift; sourceTree = "<group>"; };
-		GLASSROWBTN_FILE_REF_001 /* GlassRowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassRowButtonStyle.swift; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		CAEBBA262AE74B2B00ABE21B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71C478812E3D818300BBCF6E /* KeychainSwift in Frameworks */,
-				A1B2C3D42E000000AABBCC03 /* Auth0 in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CAEBBA362AE74B3000ABE21B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CAEBBA402AE74B3000ABE21B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		71C6CF282F9D41AE00BCC6F8 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				71C6CF292F9D41B200BCC6F8 /* SettingsView.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		71D4C5DA2F545993008D372F /* Top Albums */ = {
-			isa = PBXGroup;
-			children = (
-				71D4C5DB2F545997008D372F /* AlbumCard.swift */,
-				71D4C5DD2F5459A6008D372F /* AlbumDetailView.swift */,
-				71D4C5DF2F5459AC008D372F /* TopAlbumsView.swift */,
-			);
-			path = "Top Albums";
-			sourceTree = "<group>";
-		};
-		CA265FFB2C497D7400C1B3DB /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				CA9CA59D2AEB33A100794277 /* IdentifiableTypes.swift */,
-				CA9CC0E92AE9D99900868478 /* CodableTypes.swift */,
-				CE349B6D280C4DB6BBC0B218 /* ViewState.swift */,
-				7AEF7447D03940D6A9B77EBA /* NetworkError.swift */,
-				71C6CF222F9D416300BCC6F8 /* BlurIntensity.swift */,
-				71C6CF242F9D416400BCC6F8 /* EnvironmentKeys.swift */,
-			);
-			path = Types;
-			sourceTree = "<group>";
-		};
-		CA6BBC6F2AE8552B00CB99EC /* Tabs */ = {
-			isa = PBXGroup;
-			children = (
-				CA6BBC702AE8554000CB99EC /* TabUIView.swift */,
-				CA9CC0E12AE9CCEF00868478 /* Top Artists */,
-				CA9CC0DE2AE9CBED00868478 /* Top Songs */,
-				71D4C5DA2F545993008D372F /* Top Albums */,
-				71C6CF282F9D41AE00BCC6F8 /* Settings */,
-			);
-			path = Tabs;
-			sourceTree = "<group>";
-		};
-		CA9CC0DE2AE9CBED00868478 /* Top Songs */ = {
-			isa = PBXGroup;
-			children = (
-				CA9CC0DF2AE9CC0000868478 /* TopSongsView.swift */,
-				CA9CC0E52AE9CDE100868478 /* SongCard.swift */,
-				71D4C5C52F534CB1008D372F /* SongDetailView.swift */,
-			);
-			path = "Top Songs";
-			sourceTree = "<group>";
-		};
-		CA9CC0E12AE9CCEF00868478 /* Top Artists */ = {
-			isa = PBXGroup;
-			children = (
-				CA9CC0E32AE9CD0A00868478 /* TopArtistsView.swift */,
-				CA0E11942B347B9500792E68 /* ArtistCard.swift */,
-				71D4C5C72F534CBD008D372F /* ArtistDetailView.swift */,
-			);
-			path = "Top Artists";
-			sourceTree = "<group>";
-		};
-		CAEBBA202AE74B2B00ABE21B = {
-			isa = PBXGroup;
-			children = (
-				CAEBBA2B2AE74B2B00ABE21B /* Music Stats iOS */,
-				CAEBBA3C2AE74B3000ABE21B /* Music Stats iOSTests */,
-				CAEBBA462AE74B3000ABE21B /* Music Stats iOSUITests */,
-				CAEBBA2A2AE74B2B00ABE21B /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		CAEBBA2A2AE74B2B00ABE21B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CAEBBA292AE74B2B00ABE21B /* Music Stats iOS.app */,
-				CAEBBA392AE74B3000ABE21B /* Music Stats iOSTests.xctest */,
-				CAEBBA432AE74B3000ABE21B /* Music Stats iOSUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CAEBBA2B2AE74B2B00ABE21B /* Music Stats iOS */ = {
-			isa = PBXGroup;
-			children = (
-				7101594E2E7F0F7D0038295C /* GlassIcon.icon */,
-				71C478822E3D861C00BBCF6E /* AuthManager.swift */,
-				A1B2C3D42E000000AABBCC04 /* SpotifyConnectionView.swift */,
-				CA265FFB2C497D7400C1B3DB /* Types */,
-				CA3A7A5A2C4729430064F3DC /* Music-Stats-iOS-Info.plist */,
-				AUTH0PLIST_FILE_REF_001 /* Auth0.plist */,
-				CA6BBC6F2AE8552B00CB99EC /* Tabs */,
-				CAEBBA2C2AE74B2B00ABE21B /* MusicStatsiOSApp.swift */,
-				CAEBBA302AE74B2F00ABE21B /* Assets.xcassets */,
-				CAEBBA322AE74B2F00ABE21B /* Preview Content */,
-				CAEBD6582AF428420086B01D /* AuthorizationView.swift */,
-				CA265FF42C49576A00C1B3DB /* Sample.xcconfig */,
-				71E379202CE526900016B8A8 /* Config.xcconfig */,
-				CAEBD65A2AF458890086B01D /* UserTopItems.swift */,
-				71D4C5C92F534CD6008D372F /* DetailRow.swift */,
-				71D4C5CB2F53CDA0008D372F /* ProfileToolbarItem.swift */,
-				0B3DBF01831258479E5887FA /* StateContainerView.swift */,
-				GLASSROW_FILE_REF_001 /* GlassListRow.swift */,
-				GLASSBTN_FILE_REF_001 /* GlassButtonStyle.swift */,
-				GLASSROWBTN_FILE_REF_001 /* GlassRowButtonStyle.swift */,
-				EXT_GROUP_9999 /* Extensions */,
-			);
-			path = "Music Stats iOS";
-			sourceTree = "<group>";
-		};
-		CAEBBA322AE74B2F00ABE21B /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				CAEBBA332AE74B2F00ABE21B /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		CAEBBA3C2AE74B3000ABE21B /* Music Stats iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				CAEBBA3D2AE74B3000ABE21B /* MusicStatsiOSTests.swift */,
-				71C6CF262F9D416700BCC6F8 /* BlurIntensityTests.swift */,
-			);
-			path = "Music Stats iOSTests";
-			sourceTree = "<group>";
-		};
-		CAEBBA462AE74B3000ABE21B /* Music Stats iOSUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CAEBBA472AE74B3000ABE21B /* MusicStatsiOSUITests.swift */,
-				CAEBBA492AE74B3000ABE21B /* MusicStatsiOSUITestsLaunchTests.swift */,
-			);
-			path = "Music Stats iOSUITests";
-			sourceTree = "<group>";
-		};
-		EXT_GROUP_9999 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				COLORDS_FILE_REF_001 /* Extensions/Color+DesignSystem.swift */,
-				CGFLOATDS_FILE_REF_001 /* Extensions/CGFloat+DesignSystem.swift */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		CAEBBA282AE74B2B00ABE21B /* Music Stats iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CAEBBA4D2AE74B3000ABE21B /* Build configuration list for PBXNativeTarget "Music Stats iOS" */;
-			buildPhases = (
-				CAEBBA252AE74B2B00ABE21B /* Sources */,
-				CAEBBA262AE74B2B00ABE21B /* Frameworks */,
-				CAEBBA272AE74B2B00ABE21B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Music Stats iOS";
-			productName = "Music Stats iOS";
-			productReference = CAEBBA292AE74B2B00ABE21B /* Music Stats iOS.app */;
-			productType = "com.apple.product-type.application";
-		};
-		CAEBBA382AE74B3000ABE21B /* Music Stats iOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CAEBBA502AE74B3000ABE21B /* Build configuration list for PBXNativeTarget "Music Stats iOSTests" */;
-			buildPhases = (
-				CAEBBA352AE74B3000ABE21B /* Sources */,
-				CAEBBA362AE74B3000ABE21B /* Frameworks */,
-				CAEBBA372AE74B3000ABE21B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CAEBBA3B2AE74B3000ABE21B /* PBXTargetDependency */,
-			);
-			name = "Music Stats iOSTests";
-			productName = "Music Stats iOSTests";
-			productReference = CAEBBA392AE74B3000ABE21B /* Music Stats iOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		CAEBBA422AE74B3000ABE21B /* Music Stats iOSUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CAEBBA532AE74B3000ABE21B /* Build configuration list for PBXNativeTarget "Music Stats iOSUITests" */;
-			buildPhases = (
-				CAEBBA3F2AE74B3000ABE21B /* Sources */,
-				CAEBBA402AE74B3000ABE21B /* Frameworks */,
-				CAEBBA412AE74B3000ABE21B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CAEBBA452AE74B3000ABE21B /* PBXTargetDependency */,
-			);
-			name = "Music Stats iOSUITests";
-			productName = "Music Stats iOSUITests";
-			productReference = CAEBBA432AE74B3000ABE21B /* Music Stats iOSUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		CAEBBA212AE74B2B00ABE21B /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1610;
-				TargetAttributes = {
-					CAEBBA282AE74B2B00ABE21B = {
-						CreatedOnToolsVersion = 15.0.1;
-					};
-					CAEBBA382AE74B3000ABE21B = {
-						CreatedOnToolsVersion = 15.0.1;
-						TestTargetID = CAEBBA282AE74B2B00ABE21B;
-					};
-					CAEBBA422AE74B3000ABE21B = {
-						CreatedOnToolsVersion = 15.0.1;
-						TestTargetID = CAEBBA282AE74B2B00ABE21B;
-					};
-				};
-			};
-			buildConfigurationList = CAEBBA242AE74B2B00ABE21B /* Build configuration list for PBXProject "Music Stats iOS" */;
-			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = CAEBBA202AE74B2B00ABE21B;
-			packageReferences = (
-				71C4787F2E3D818300BBCF6E /* XCRemoteSwiftPackageReference "keychain-swift" */,
-				A1B2C3D42E000000AABBCC01 /* XCRemoteSwiftPackageReference "Auth0.swift" */,
-			);
-			productRefGroup = CAEBBA2A2AE74B2B00ABE21B /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				CAEBBA282AE74B2B00ABE21B /* Music Stats iOS */,
-				CAEBBA382AE74B3000ABE21B /* Music Stats iOSTests */,
-				CAEBBA422AE74B3000ABE21B /* Music Stats iOSUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		CAEBBA272AE74B2B00ABE21B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7101594F2E7F0F7D0038295C /* GlassIcon.icon in Resources */,
-				CAEBBA342AE74B2F00ABE21B /* Preview Assets.xcassets in Resources */,
-				CAEBBA312AE74B2F00ABE21B /* Assets.xcassets in Resources */,
-				AUTH0PLIST_BUILD_FILE_001 /* Auth0.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CAEBBA372AE74B3000ABE21B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CAEBBA412AE74B3000ABE21B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		CAEBBA252AE74B2B00ABE21B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA9CC0E62AE9CDE100868478 /* SongCard.swift in Sources */,
-				CAEBD65B2AF458890086B01D /* UserTopItems.swift in Sources */,
-				CA9CC0E02AE9CC0000868478 /* TopSongsView.swift in Sources */,
-				71D4C5CA2F534CD6008D372F /* DetailRow.swift in Sources */,
-				CA0E11952B347B9500792E68 /* ArtistCard.swift in Sources */,
-				71D4C5DE2F5459A6008D372F /* AlbumDetailView.swift in Sources */,
-				71D4C5DC2F545997008D372F /* AlbumCard.swift in Sources */,
-				71D4C5C62F534CB1008D372F /* SongDetailView.swift in Sources */,
-				CA6BBC712AE8554000CB99EC /* TabUIView.swift in Sources */,
-				71C6CF252F9D416400BCC6F8 /* EnvironmentKeys.swift in Sources */,
-				CA3A7A5D2C472EFC0064F3DC /* MusicStatsiOSApp.swift in Sources */,
-				71D4C5E02F5459AC008D372F /* TopAlbumsView.swift in Sources */,
-				CA9CC0EA2AE9D99900868478 /* CodableTypes.swift in Sources */,
-				CA9CC0E42AE9CD0A00868478 /* TopArtistsView.swift in Sources */,
-				71D4C5C82F534CBD008D372F /* ArtistDetailView.swift in Sources */,
-				71C6CF2A2F9D41B200BCC6F8 /* SettingsView.swift in Sources */,
-				71C478832E3D861C00BBCF6E /* AuthManager.swift in Sources */,
-				CAEBD6592AF428420086B01D /* AuthorizationView.swift in Sources */,
-				A1B2C3D42E000000AABBCC05 /* SpotifyConnectionView.swift in Sources */,
-				71C6CF232F9D416400BCC6F8 /* BlurIntensity.swift in Sources */,
-				CA9CA59E2AEB33A100794277 /* IdentifiableTypes.swift in Sources */,
-				71D4C5CC2F53CDA0008D372F /* ProfileToolbarItem.swift in Sources */,
-				9FA0D6EDD6FA458ABD679D2F /* ViewState.swift in Sources */,
-				EF2E7A89AC96FA92771F953F /* StateContainerView.swift in Sources */,
-				C861EF6B7E874DADB655153F /* NetworkError.swift in Sources */,
-				COLORDS_BUILD_FILE_001 /* Extensions/Color+DesignSystem.swift in Sources */,
-				CGFLOATDS_BUILD_FILE_001 /* Extensions/CGFloat+DesignSystem.swift in Sources */,
-				GLASSROW_BUILD_FILE_001 /* GlassListRow.swift in Sources */,
-				GLASSBTN_BUILD_FILE_001 /* GlassButtonStyle.swift in Sources */,
-				GLASSROWBTN_BUILD_FILE_001 /* GlassRowButtonStyle.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CAEBBA352AE74B3000ABE21B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71C6CF272F9D416700BCC6F8 /* BlurIntensityTests.swift in Sources */,
-				CAEBBA3E2AE74B3000ABE21B /* MusicStatsiOSTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CAEBBA3F2AE74B3000ABE21B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CAEBBA4A2AE74B3000ABE21B /* MusicStatsiOSUITestsLaunchTests.swift in Sources */,
-				CAEBBA482AE74B3000ABE21B /* MusicStatsiOSUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CAEBBA3B2AE74B3000ABE21B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CAEBBA282AE74B2B00ABE21B /* Music Stats iOS */;
-			targetProxy = CAEBBA3A2AE74B3000ABE21B /* PBXContainerItemProxy */;
-		};
-		CAEBBA452AE74B3000ABE21B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CAEBBA282AE74B2B00ABE21B /* Music Stats iOS */;
-			targetProxy = CAEBBA442AE74B3000ABE21B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		CAEBBA4B2AE74B3000ABE21B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		CAEBBA4C2AE74B3000ABE21B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		CAEBBA4E2AE74B3000ABE21B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71E379202CE526900016B8A8 /* Config.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = GlassIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Music Stats iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = YNT6PGUJ53;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Music-Stats-iOS-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Music Stats";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "memo.com.Music-Stats-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		CAEBBA4F2AE74B3000ABE21B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = GlassIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Music Stats iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = YNT6PGUJ53;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Music-Stats-iOS-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Music Stats";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "memo.com.Music-Stats-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		CAEBBA512AE74B3000ABE21B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "memo.com.Music-Stats-iOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Music Stats iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Music Stats iOS";
-			};
-			name = Debug;
-		};
-		CAEBBA522AE74B3000ABE21B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "memo.com.Music-Stats-iOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Music Stats iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Music Stats iOS";
-			};
-			name = Release;
-		};
-		CAEBBA542AE74B3000ABE21B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "memo.com.Music-Stats-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Music Stats iOS";
-			};
-			name = Debug;
-		};
-		CAEBBA552AE74B3000ABE21B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "memo.com.Music-Stats-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Music Stats iOS";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		CAEBBA242AE74B2B00ABE21B /* Build configuration list for PBXProject "Music Stats iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CAEBBA4B2AE74B3000ABE21B /* Debug */,
-				CAEBBA4C2AE74B3000ABE21B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CAEBBA4D2AE74B3000ABE21B /* Build configuration list for PBXNativeTarget "Music Stats iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CAEBBA4E2AE74B3000ABE21B /* Debug */,
-				CAEBBA4F2AE74B3000ABE21B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CAEBBA502AE74B3000ABE21B /* Build configuration list for PBXNativeTarget "Music Stats iOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CAEBBA512AE74B3000ABE21B /* Debug */,
-				CAEBBA522AE74B3000ABE21B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CAEBBA532AE74B3000ABE21B /* Build configuration list for PBXNativeTarget "Music Stats iOSUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CAEBBA542AE74B3000ABE21B /* Debug */,
-				CAEBBA552AE74B3000ABE21B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		71C4787F2E3D818300BBCF6E /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 24.0.0;
-			};
-		};
-		A1B2C3D42E000000AABBCC01 /* XCRemoteSwiftPackageReference "Auth0.swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/auth0/Auth0.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		71C478802E3D818300BBCF6E /* KeychainSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 71C4787F2E3D818300BBCF6E /* XCRemoteSwiftPackageReference "keychain-swift" */;
-			productName = KeychainSwift;
-		};
-		A1B2C3D42E000000AABBCC02 /* Auth0 */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A1B2C3D42E000000AABBCC01 /* XCRemoteSwiftPackageReference "Auth0.swift" */;
-			productName = Auth0;
-		};
-/* End XCSwiftPackageProductDependency section */
-	};
-	rootObject = CAEBBA212AE74B2B00ABE21B /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>56</string>
+	<key>objects</key>
+	<dict>
+		<key>0B3DBF01831258479E5887FA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StateContainerView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FDE23E1C5364D8FBE521692</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>RecentlyPlayedRow.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>40E813AA55A9432198CD9A24</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FDE23E1C5364D8FBE521692</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7101594E2E7F0F7D0038295C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.iconcomposer.icon</string>
+			<key>path</key>
+			<string>GlassIcon.icon</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7101594F2E7F0F7D0038295C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7101594E2E7F0F7D0038295C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71C4787F2E3D818300BBCF6E</key>
+		<dict>
+			<key>isa</key>
+			<string>XCRemoteSwiftPackageReference</string>
+			<key>repositoryURL</key>
+			<string>https://github.com/evgenyneu/keychain-swift.git</string>
+			<key>requirement</key>
+			<dict>
+				<key>kind</key>
+				<string>upToNextMajorVersion</string>
+				<key>minimumVersion</key>
+				<string>24.0.0</string>
+			</dict>
+		</dict>
+		<key>71C478802E3D818300BBCF6E</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>71C4787F2E3D818300BBCF6E</string>
+			<key>productName</key>
+			<string>KeychainSwift</string>
+		</dict>
+		<key>71C478812E3D818300BBCF6E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>71C478802E3D818300BBCF6E</string>
+		</dict>
+		<key>71C478822E3D861C00BBCF6E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AuthManager.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71C478832E3D861C00BBCF6E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71C478822E3D861C00BBCF6E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71C6CF222F9D416300BCC6F8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BlurIntensity.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71C6CF232F9D416400BCC6F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71C6CF222F9D416300BCC6F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71C6CF242F9D416400BCC6F8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>EnvironmentKeys.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71C6CF252F9D416400BCC6F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71C6CF242F9D416400BCC6F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71C6CF262F9D416700BCC6F8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BlurIntensityTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71C6CF272F9D416700BCC6F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71C6CF262F9D416700BCC6F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71C6CF282F9D41AE00BCC6F8</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>71C6CF292F9D41B200BCC6F8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Settings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71C6CF292F9D41B200BCC6F8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SettingsView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71C6CF2A2F9D41B200BCC6F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71C6CF292F9D41B200BCC6F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71D4C5C52F534CB1008D372F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SongDetailView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71D4C5C62F534CB1008D372F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71D4C5C52F534CB1008D372F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71D4C5C72F534CBD008D372F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistDetailView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71D4C5C82F534CBD008D372F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71D4C5C72F534CBD008D372F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71D4C5C92F534CD6008D372F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>DetailRow.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71D4C5CA2F534CD6008D372F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71D4C5C92F534CD6008D372F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71D4C5CB2F53CDA0008D372F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ProfileToolbarItem.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71D4C5CC2F53CDA0008D372F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71D4C5CB2F53CDA0008D372F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71D4C5DA2F545993008D372F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>71D4C5DB2F545997008D372F</string>
+				<string>71D4C5DD2F5459A6008D372F</string>
+				<string>71D4C5DF2F5459AC008D372F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Top Albums</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71D4C5DB2F545997008D372F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumCard.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71D4C5DC2F545997008D372F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71D4C5DB2F545997008D372F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71D4C5DD2F5459A6008D372F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumDetailView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71D4C5DE2F5459A6008D372F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71D4C5DD2F5459A6008D372F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71D4C5DF2F5459AC008D372F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TopAlbumsView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71D4C5E02F5459AC008D372F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71D4C5DF2F5459AC008D372F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71E379202CE526900016B8A8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Config.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7324F50F55A64DA2AECF2C64</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7B9529B30BA6440CA7A06DA6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7AEF7447D03940D6A9B77EBA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>NetworkError.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7B9529B30BA6440CA7A06DA6</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>RecentlyPlayedView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9FA0D6EDD6FA458ABD679D2F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CE349B6D280C4DB6BBC0B218</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A0B25F8AE28842639AFE7EE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FDE23E1C5364D8FBE521692</string>
+				<string>7B9529B30BA6440CA7A06DA6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Recently Played</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A1B2C3D42E000000AABBCC01</key>
+		<dict>
+			<key>isa</key>
+			<string>XCRemoteSwiftPackageReference</string>
+			<key>repositoryURL</key>
+			<string>https://github.com/auth0/Auth0.swift</string>
+			<key>requirement</key>
+			<dict>
+				<key>kind</key>
+				<string>upToNextMajorVersion</string>
+				<key>minimumVersion</key>
+				<string>2.0.0</string>
+			</dict>
+		</dict>
+		<key>A1B2C3D42E000000AABBCC02</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>A1B2C3D42E000000AABBCC01</string>
+			<key>productName</key>
+			<string>Auth0</string>
+		</dict>
+		<key>A1B2C3D42E000000AABBCC03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>A1B2C3D42E000000AABBCC02</string>
+		</dict>
+		<key>A1B2C3D42E000000AABBCC04</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SpotifyConnectionView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A1B2C3D42E000000AABBCC05</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A1B2C3D42E000000AABBCC04</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AUTH0PLIST_BUILD_FILE_001</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AUTH0PLIST_FILE_REF_001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AUTH0PLIST_FILE_REF_001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Auth0.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C861EF6B7E874DADB655153F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7AEF7447D03940D6A9B77EBA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CA0E11942B347B9500792E68</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistCard.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA0E11952B347B9500792E68</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CA0E11942B347B9500792E68</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CA265FF42C49576A00C1B3DB</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Sample.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA265FFB2C497D7400C1B3DB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CA9CA59D2AEB33A100794277</string>
+				<string>CA9CC0E92AE9D99900868478</string>
+				<string>CE349B6D280C4DB6BBC0B218</string>
+				<string>7AEF7447D03940D6A9B77EBA</string>
+				<string>71C6CF222F9D416300BCC6F8</string>
+				<string>71C6CF242F9D416400BCC6F8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Types</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA3A7A5A2C4729430064F3DC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist</string>
+			<key>path</key>
+			<string>Music-Stats-iOS-Info.plist</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>CA3A7A5D2C472EFC0064F3DC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CAEBBA2C2AE74B2B00ABE21B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CA6BBC6F2AE8552B00CB99EC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CA6BBC702AE8554000CB99EC</string>
+				<string>CA9CC0E12AE9CCEF00868478</string>
+				<string>CA9CC0DE2AE9CBED00868478</string>
+				<string>71D4C5DA2F545993008D372F</string>
+				<string>71C6CF282F9D41AE00BCC6F8</string>
+				<string>A0B25F8AE28842639AFE7EE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Tabs</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA6BBC702AE8554000CB99EC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TabUIView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA6BBC712AE8554000CB99EC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CA6BBC702AE8554000CB99EC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CA9CA59D2AEB33A100794277</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>IdentifiableTypes.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA9CA59E2AEB33A100794277</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CA9CA59D2AEB33A100794277</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CA9CC0DE2AE9CBED00868478</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CA9CC0DF2AE9CC0000868478</string>
+				<string>CA9CC0E52AE9CDE100868478</string>
+				<string>71D4C5C52F534CB1008D372F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Top Songs</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA9CC0DF2AE9CC0000868478</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TopSongsView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA9CC0E02AE9CC0000868478</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CA9CC0DF2AE9CC0000868478</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CA9CC0E12AE9CCEF00868478</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CA9CC0E32AE9CD0A00868478</string>
+				<string>CA0E11942B347B9500792E68</string>
+				<string>71D4C5C72F534CBD008D372F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Top Artists</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA9CC0E32AE9CD0A00868478</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TopArtistsView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA9CC0E42AE9CD0A00868478</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CA9CC0E32AE9CD0A00868478</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CA9CC0E52AE9CDE100868478</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SongCard.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA9CC0E62AE9CDE100868478</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CA9CC0E52AE9CDE100868478</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CA9CC0E92AE9D99900868478</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CodableTypes.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA9CC0EA2AE9D99900868478</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CA9CC0E92AE9D99900868478</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CAEBBA202AE74B2B00ABE21B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CAEBBA2B2AE74B2B00ABE21B</string>
+				<string>CAEBBA3C2AE74B3000ABE21B</string>
+				<string>CAEBBA462AE74B3000ABE21B</string>
+				<string>CAEBBA2A2AE74B2B00ABE21B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA212AE74B2B00ABE21B</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>BuildIndependentTargetsInParallel</key>
+				<string>1</string>
+				<key>LastSwiftUpdateCheck</key>
+				<string>1500</string>
+				<key>LastUpgradeCheck</key>
+				<string>1610</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>CAEBBA282AE74B2B00ABE21B</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>15.0.1</string>
+					</dict>
+					<key>CAEBBA382AE74B3000ABE21B</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>15.0.1</string>
+						<key>TestTargetID</key>
+						<string>CAEBBA282AE74B2B00ABE21B</string>
+					</dict>
+					<key>CAEBBA422AE74B3000ABE21B</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>15.0.1</string>
+						<key>TestTargetID</key>
+						<string>CAEBBA282AE74B2B00ABE21B</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>CAEBBA242AE74B2B00ABE21B</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 14.0</string>
+			<key>developmentRegion</key>
+			<string>en</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>CAEBBA202AE74B2B00ABE21B</string>
+			<key>packageReferences</key>
+			<array>
+				<string>71C4787F2E3D818300BBCF6E</string>
+				<string>A1B2C3D42E000000AABBCC01</string>
+			</array>
+			<key>productRefGroup</key>
+			<string>CAEBBA2A2AE74B2B00ABE21B</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>CAEBBA282AE74B2B00ABE21B</string>
+				<string>CAEBBA382AE74B3000ABE21B</string>
+				<string>CAEBBA422AE74B3000ABE21B</string>
+			</array>
+		</dict>
+		<key>CAEBBA242AE74B2B00ABE21B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>CAEBBA4B2AE74B3000ABE21B</string>
+				<string>CAEBBA4C2AE74B3000ABE21B</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>CAEBBA252AE74B2B00ABE21B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>CA9CC0E62AE9CDE100868478</string>
+				<string>CAEBD65B2AF458890086B01D</string>
+				<string>CA9CC0E02AE9CC0000868478</string>
+				<string>71D4C5CA2F534CD6008D372F</string>
+				<string>CA0E11952B347B9500792E68</string>
+				<string>71D4C5DE2F5459A6008D372F</string>
+				<string>71D4C5DC2F545997008D372F</string>
+				<string>71D4C5C62F534CB1008D372F</string>
+				<string>CA6BBC712AE8554000CB99EC</string>
+				<string>71C6CF252F9D416400BCC6F8</string>
+				<string>CA3A7A5D2C472EFC0064F3DC</string>
+				<string>71D4C5E02F5459AC008D372F</string>
+				<string>CA9CC0EA2AE9D99900868478</string>
+				<string>CA9CC0E42AE9CD0A00868478</string>
+				<string>71D4C5C82F534CBD008D372F</string>
+				<string>71C6CF2A2F9D41B200BCC6F8</string>
+				<string>71C478832E3D861C00BBCF6E</string>
+				<string>CAEBD6592AF428420086B01D</string>
+				<string>A1B2C3D42E000000AABBCC05</string>
+				<string>71C6CF232F9D416400BCC6F8</string>
+				<string>CA9CA59E2AEB33A100794277</string>
+				<string>71D4C5CC2F53CDA0008D372F</string>
+				<string>9FA0D6EDD6FA458ABD679D2F</string>
+				<string>EF2E7A89AC96FA92771F953F</string>
+				<string>C861EF6B7E874DADB655153F</string>
+				<string>COLORDS_BUILD_FILE_001</string>
+				<string>CGFLOATDS_BUILD_FILE_001</string>
+				<string>GLASSROW_BUILD_FILE_001</string>
+				<string>GLASSBTN_BUILD_FILE_001</string>
+				<string>GLASSROWBTN_BUILD_FILE_001</string>
+				<string>7324F50F55A64DA2AECF2C64</string>
+				<string>40E813AA55A9432198CD9A24</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CAEBBA262AE74B2B00ABE21B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>71C478812E3D818300BBCF6E</string>
+				<string>A1B2C3D42E000000AABBCC03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CAEBBA272AE74B2B00ABE21B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>7101594F2E7F0F7D0038295C</string>
+				<string>CAEBBA342AE74B2F00ABE21B</string>
+				<string>CAEBBA312AE74B2F00ABE21B</string>
+				<string>AUTH0PLIST_BUILD_FILE_001</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CAEBBA282AE74B2B00ABE21B</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>CAEBBA4D2AE74B3000ABE21B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>CAEBBA252AE74B2B00ABE21B</string>
+				<string>CAEBBA262AE74B2B00ABE21B</string>
+				<string>CAEBBA272AE74B2B00ABE21B</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Music Stats iOS</string>
+			<key>productName</key>
+			<string>Music Stats iOS</string>
+			<key>productReference</key>
+			<string>CAEBBA292AE74B2B00ABE21B</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>CAEBBA292AE74B2B00ABE21B</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Music Stats iOS.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>CAEBBA2A2AE74B2B00ABE21B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CAEBBA292AE74B2B00ABE21B</string>
+				<string>CAEBBA392AE74B3000ABE21B</string>
+				<string>CAEBBA432AE74B3000ABE21B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA2B2AE74B2B00ABE21B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7101594E2E7F0F7D0038295C</string>
+				<string>71C478822E3D861C00BBCF6E</string>
+				<string>A1B2C3D42E000000AABBCC04</string>
+				<string>CA265FFB2C497D7400C1B3DB</string>
+				<string>CA3A7A5A2C4729430064F3DC</string>
+				<string>AUTH0PLIST_FILE_REF_001</string>
+				<string>CA6BBC6F2AE8552B00CB99EC</string>
+				<string>CAEBBA2C2AE74B2B00ABE21B</string>
+				<string>CAEBBA302AE74B2F00ABE21B</string>
+				<string>CAEBBA322AE74B2F00ABE21B</string>
+				<string>CAEBD6582AF428420086B01D</string>
+				<string>CA265FF42C49576A00C1B3DB</string>
+				<string>71E379202CE526900016B8A8</string>
+				<string>CAEBD65A2AF458890086B01D</string>
+				<string>71D4C5C92F534CD6008D372F</string>
+				<string>71D4C5CB2F53CDA0008D372F</string>
+				<string>0B3DBF01831258479E5887FA</string>
+				<string>GLASSROW_FILE_REF_001</string>
+				<string>GLASSBTN_FILE_REF_001</string>
+				<string>GLASSROWBTN_FILE_REF_001</string>
+				<string>EXT_GROUP_9999</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Music Stats iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA2C2AE74B2B00ABE21B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MusicStatsiOSApp.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA302AE74B2F00ABE21B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA312AE74B2F00ABE21B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CAEBBA302AE74B2F00ABE21B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CAEBBA322AE74B2F00ABE21B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CAEBBA332AE74B2F00ABE21B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Preview Content</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA332AE74B2F00ABE21B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Preview Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA342AE74B2F00ABE21B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CAEBBA332AE74B2F00ABE21B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CAEBBA352AE74B3000ABE21B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>71C6CF272F9D416700BCC6F8</string>
+				<string>CAEBBA3E2AE74B3000ABE21B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CAEBBA362AE74B3000ABE21B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CAEBBA372AE74B3000ABE21B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CAEBBA382AE74B3000ABE21B</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>CAEBBA502AE74B3000ABE21B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>CAEBBA352AE74B3000ABE21B</string>
+				<string>CAEBBA362AE74B3000ABE21B</string>
+				<string>CAEBBA372AE74B3000ABE21B</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>CAEBBA3B2AE74B3000ABE21B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Music Stats iOSTests</string>
+			<key>productName</key>
+			<string>Music Stats iOSTests</string>
+			<key>productReference</key>
+			<string>CAEBBA392AE74B3000ABE21B</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>CAEBBA392AE74B3000ABE21B</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Music Stats iOSTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>CAEBBA3A2AE74B3000ABE21B</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>CAEBBA212AE74B2B00ABE21B</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>CAEBBA282AE74B2B00ABE21B</string>
+			<key>remoteInfo</key>
+			<string>Music Stats iOS</string>
+		</dict>
+		<key>CAEBBA3B2AE74B3000ABE21B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>CAEBBA282AE74B2B00ABE21B</string>
+			<key>targetProxy</key>
+			<string>CAEBBA3A2AE74B3000ABE21B</string>
+		</dict>
+		<key>CAEBBA3C2AE74B3000ABE21B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CAEBBA3D2AE74B3000ABE21B</string>
+				<string>71C6CF262F9D416700BCC6F8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Music Stats iOSTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA3D2AE74B3000ABE21B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MusicStatsiOSTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA3E2AE74B3000ABE21B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CAEBBA3D2AE74B3000ABE21B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CAEBBA3F2AE74B3000ABE21B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>CAEBBA4A2AE74B3000ABE21B</string>
+				<string>CAEBBA482AE74B3000ABE21B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CAEBBA402AE74B3000ABE21B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CAEBBA412AE74B3000ABE21B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CAEBBA422AE74B3000ABE21B</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>CAEBBA532AE74B3000ABE21B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>CAEBBA3F2AE74B3000ABE21B</string>
+				<string>CAEBBA402AE74B3000ABE21B</string>
+				<string>CAEBBA412AE74B3000ABE21B</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>CAEBBA452AE74B3000ABE21B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Music Stats iOSUITests</string>
+			<key>productName</key>
+			<string>Music Stats iOSUITests</string>
+			<key>productReference</key>
+			<string>CAEBBA432AE74B3000ABE21B</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.ui-testing</string>
+		</dict>
+		<key>CAEBBA432AE74B3000ABE21B</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Music Stats iOSUITests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>CAEBBA442AE74B3000ABE21B</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>CAEBBA212AE74B2B00ABE21B</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>CAEBBA282AE74B2B00ABE21B</string>
+			<key>remoteInfo</key>
+			<string>Music Stats iOS</string>
+		</dict>
+		<key>CAEBBA452AE74B3000ABE21B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>CAEBBA282AE74B2B00ABE21B</string>
+			<key>targetProxy</key>
+			<string>CAEBBA442AE74B3000ABE21B</string>
+		</dict>
+		<key>CAEBBA462AE74B3000ABE21B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CAEBBA472AE74B3000ABE21B</string>
+				<string>CAEBBA492AE74B3000ABE21B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Music Stats iOSUITests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA472AE74B3000ABE21B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MusicStatsiOSUITests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA482AE74B3000ABE21B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CAEBBA472AE74B3000ABE21B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CAEBBA492AE74B3000ABE21B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MusicStatsiOSUITestsLaunchTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBBA4A2AE74B3000ABE21B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CAEBBA492AE74B3000ABE21B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CAEBBA4B2AE74B3000ABE21B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS</key>
+				<string>YES</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++20</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_WEAK</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_COMMA</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INFINITE_RECURSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_NON_LITERAL_NULL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_LITERAL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
+				<string>YES</string>
+				<key>CLANG_WARN_RANGE_LOOP_ANALYSIS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_STRICT_PROTOTYPES</key>
+				<string>YES</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNGUARDED_AVAILABILITY</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>ENABLE_USER_SCRIPT_SANDBOXING</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu17</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>17.6</string>
+				<key>LOCALIZATION_PREFERS_STRING_CATALOGS</key>
+				<string>YES</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>INCLUDE_SOURCE</string>
+				<key>MTL_FAST_MATH</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_ACTIVE_COMPILATION_CONDITIONS</key>
+				<string>DEBUG $(inherited)</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>CAEBBA4C2AE74B3000ABE21B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS</key>
+				<string>YES</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++20</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_WEAK</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_COMMA</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INFINITE_RECURSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_NON_LITERAL_NULL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_LITERAL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
+				<string>YES</string>
+				<key>CLANG_WARN_RANGE_LOOP_ANALYSIS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_STRICT_PROTOTYPES</key>
+				<string>YES</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNGUARDED_AVAILABILITY</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_USER_SCRIPT_SANDBOXING</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu17</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>17.6</string>
+				<key>LOCALIZATION_PREFERS_STRING_CATALOGS</key>
+				<string>YES</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>MTL_FAST_MATH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_COMPILATION_MODE</key>
+				<string>wholemodule</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>CAEBBA4D2AE74B3000ABE21B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>CAEBBA4E2AE74B3000ABE21B</string>
+				<string>CAEBBA4F2AE74B3000ABE21B</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>CAEBBA4E2AE74B3000ABE21B</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>71E379202CE526900016B8A8</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>GlassIcon</string>
+				<key>ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME</key>
+				<string>AccentColor</string>
+				<key>ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS</key>
+				<string>YES</string>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEVELOPMENT_ASSET_PATHS</key>
+				<string>"Music Stats iOS/Preview Content"</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>YNT6PGUJ53</string>
+				<key>ENABLE_PREVIEWS</key>
+				<string>YES</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Music-Stats-iOS-Info.plist</string>
+				<key>INFOPLIST_KEY_CFBundleDisplayName</key>
+				<string>Music Stats</string>
+				<key>INFOPLIST_KEY_UIApplicationSceneManifest_Generation</key>
+				<string>YES</string>
+				<key>INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents</key>
+				<string>YES</string>
+				<key>INFOPLIST_KEY_UILaunchScreen_Generation</key>
+				<string>YES</string>
+				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad</key>
+				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
+				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone</key>
+				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>17.6</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+				</array>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>memo.com.Music-Stats-iOS</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>CAEBBA4F2AE74B3000ABE21B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>GlassIcon</string>
+				<key>ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME</key>
+				<string>AccentColor</string>
+				<key>ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS</key>
+				<string>YES</string>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEVELOPMENT_ASSET_PATHS</key>
+				<string>"Music Stats iOS/Preview Content"</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>YNT6PGUJ53</string>
+				<key>ENABLE_PREVIEWS</key>
+				<string>YES</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Music-Stats-iOS-Info.plist</string>
+				<key>INFOPLIST_KEY_CFBundleDisplayName</key>
+				<string>Music Stats</string>
+				<key>INFOPLIST_KEY_UIApplicationSceneManifest_Generation</key>
+				<string>YES</string>
+				<key>INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents</key>
+				<string>YES</string>
+				<key>INFOPLIST_KEY_UILaunchScreen_Generation</key>
+				<string>YES</string>
+				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad</key>
+				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
+				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone</key>
+				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>17.6</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+				</array>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>memo.com.Music-Stats-iOS</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>CAEBBA502AE74B3000ABE21B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>CAEBBA512AE74B3000ABE21B</string>
+				<string>CAEBBA522AE74B3000ABE21B</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>CAEBBA512AE74B3000ABE21B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>17.6</string>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>memo.com.Music-Stats-iOSTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>NO</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/Music Stats iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Music Stats iOS</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>CAEBBA522AE74B3000ABE21B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>17.6</string>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>memo.com.Music-Stats-iOSTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>NO</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/Music Stats iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Music Stats iOS</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>CAEBBA532AE74B3000ABE21B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>CAEBBA542AE74B3000ABE21B</string>
+				<string>CAEBBA552AE74B3000ABE21B</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>CAEBBA542AE74B3000ABE21B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>YES</string>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>memo.com.Music-Stats-iOSUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>NO</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>Music Stats iOS</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>CAEBBA552AE74B3000ABE21B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>YES</string>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>memo.com.Music-Stats-iOSUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>NO</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>Music Stats iOS</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>CAEBD6582AF428420086B01D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AuthorizationView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBD6592AF428420086B01D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CAEBD6582AF428420086B01D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CAEBD65A2AF458890086B01D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UserTopItems.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAEBD65B2AF458890086B01D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CAEBD65A2AF458890086B01D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CE349B6D280C4DB6BBC0B218</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ViewState.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CGFLOATDS_BUILD_FILE_001</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CGFLOATDS_FILE_REF_001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CGFLOATDS_FILE_REF_001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Extensions/CGFloat+DesignSystem.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>COLORDS_BUILD_FILE_001</key>
+		<dict>
+			<key>fileRef</key>
+			<string>COLORDS_FILE_REF_001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>COLORDS_FILE_REF_001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Extensions/Color+DesignSystem.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EF2E7A89AC96FA92771F953F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0B3DBF01831258479E5887FA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>EXT_GROUP_9999</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>COLORDS_FILE_REF_001</string>
+				<string>CGFLOATDS_FILE_REF_001</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Extensions</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>GLASSBTN_BUILD_FILE_001</key>
+		<dict>
+			<key>fileRef</key>
+			<string>GLASSBTN_FILE_REF_001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>GLASSBTN_FILE_REF_001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>GlassButtonStyle.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>GLASSROWBTN_BUILD_FILE_001</key>
+		<dict>
+			<key>fileRef</key>
+			<string>GLASSROWBTN_FILE_REF_001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>GLASSROWBTN_FILE_REF_001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>GlassRowButtonStyle.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>GLASSROW_BUILD_FILE_001</key>
+		<dict>
+			<key>fileRef</key>
+			<string>GLASSROW_FILE_REF_001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>GLASSROW_FILE_REF_001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>GlassListRow.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>CAEBBA212AE74B2B00ABE21B</string>
+</dict>
+</plist>
