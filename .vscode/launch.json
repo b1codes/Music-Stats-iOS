@@ -106,7 +106,7 @@
       "name": "Frontend: Run on Simulator (iPhone 17 Pro)",
       "type": "node-terminal",
       "request": "launch",
-      "command": "APP=\"$(find build/DerivedData -name 'Music Stats iOS.app' | head -1)\"; xcodebuild -project 'frontend/Music Stats iOS.xcodeproj' -scheme 'Music Stats iOS' -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' -derivedDataPath build/DerivedData build && xcrun simctl boot 'iPhone 17 Pro' 2>/dev/null; xcrun simctl install 'iPhone 17 Pro' \"$APP\" && BUNDLE_ID=$(/usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' \"$APP/Info.plist\") && xcrun simctl launch --console-pty 'iPhone 17 Pro' \"$BUNDLE_ID\"",
+      "command": "APP=\"$(find build/DerivedData -name 'Music Stats iOS.app' | head -1)\"; xcodebuild -project 'frontend/Music Stats iOS.xcodeproj' -scheme 'Music Stats iOS' -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' -derivedDataPath build/DerivedData build && open -a Simulator && xcrun simctl boot 'iPhone 17 Pro' 2>/dev/null; xcrun simctl install 'iPhone 17 Pro' \"$APP\" && BUNDLE_ID=$(/usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' \"$APP/Info.plist\") && xcrun simctl launch --console-pty 'iPhone 17 Pro' \"$BUNDLE_ID\"",
       "cwd": "${workspaceFolder}",
       "env": {}
     },
